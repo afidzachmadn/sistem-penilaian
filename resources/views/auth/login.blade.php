@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" type="image/png" sizes="16x16" href="{{env('APP_URL')}}/plugins/images/bisqa.jpg">
-    <title>Sistem Sertifikasi Terpadu - Kementrian Perindustrian Republik Indonesia</title>
+    <title>Sistem Sertifikasi Terpadu - PT. BPR </title>
     <!-- Bootstrap Core CSS -->
     <link href="{{env('APP_URL')}}/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{env('APP_URL')}}/plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css" rel="stylesheet">
