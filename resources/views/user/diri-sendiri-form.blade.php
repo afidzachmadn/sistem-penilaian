@@ -2,15 +2,15 @@
 
 @section ('sidebar-dashboard-user')
 <li class="nav-small-cap m-t-10">--- Pilihan Menu</li>
-                    <li> <a href="{{env('APP_URL')}}/user/dashboard" class="waves-effect"><i class="fa fa-tachometer p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
+                    <li> <a href="{{env('APP_URL')}}/dashboard" class="waves-effect"><i class="fa fa-tachometer p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
                     <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa fa-star p-r-10"></i> <span class="hide-menu waves-effect active">Penilaian<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                             <li class="waves-effect active"> <a href="/nilai-diri-sendiri">Diri Sendiri</a> </li>
-                            <li> <a href="javascript:void(0)">Rekan Kerja</a> </li>
+                            <li> <a href="/nilai-rekan-kerja">Rekan Kerja</a> </li>
                         </ul>
                     </li>
-                    <li> <a href="{{env('APP_URL')}}/user/dashboard" class="waves-effect"><i class="fa fa-warning p-r-10"></i> <span class="hide-menu">Komplain Nilai</span></a> </li>
-                    <li> <a href="{{env('APP_URL')}}/user/dashboard" class="waves-effect"><i class="fa fa-question-circle p-r-10"></i> <span class="hide-menu">Tips Penggunaan</span></a> </li>
+                    <li> <a href="{{env('APP_URL')}}/komplain-nilai" class="waves-effect"><i class="fa fa-warning p-r-10"></i> <span class="hide-menu">Komplain Nilai</span></a> </li>
+                    <li> <a href="{{env('APP_URL')}}/tips-penggunaan" class="waves-effect"><i class="fa fa-question-circle p-r-10"></i> <span class="hide-menu">Tips Penggunaan</span></a> </li>
 @endsection
 
 
@@ -25,7 +25,9 @@
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
                         <ol class="breadcrumb">
                             <li><a href="#">System</a></li>
-                            <li class="active">Dashboard</li>
+                            <li><a href="/dashboard">Dashboard</a></li>
+                            <li class="active">Penilaian Diri Sendiri</li>
+
                         </ol>
                     </div>
                     <!-- /.breadcrumb -->
@@ -182,9 +184,16 @@
                                             </button>
                                         </div>
                                     </div>
+</br>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                            <a href="/report-nilai-diri-sendiri">
+                            <div  class="btn btn-block btn-warning" >Lihat hasil nilai</div>
+                            </a>
+                        </div>
+                                    </div>
                                 </div>
-                                        <div class="col-md-6"> 
-                                        </div>
+                                        
                             </div>
                         </div>
                     </form>

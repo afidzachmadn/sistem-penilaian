@@ -5,7 +5,7 @@
 <head>
 
 <!--#######################################################################################################
- * @application		<Sistem_Sertifikasi_Terpadu_BISQA_SYSTEMS>
+ * @application		<Sistem_Penilaian_Terpadu_PERFORMS_SYSTEMS>
  * @author         Afidz Achmad Novendi <afidzachmadn@gmail.com>
  * @version         1.0
  * @copyright        Copyright © 2017 Afidz Achmad Novendi <afidzachmadn@gmail.com>
@@ -20,7 +20,7 @@
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{env('APP_URL')}}/images/bisqa.png">
 
-    <title>Sistem Penilaian Terpadu - Kementrian Perindustrian Republik Indonesia</title>
+    <title>Sistem Penilaian Terpadu - PT. BPR DINAMIKA BANGUN ARTA</title>
       <!-- Bootstrap Core CSS -->
     <link href="{{env('APP_URL')}}/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{env('APP_URL')}}/plugins/bower_components/bootstrap-extension/css/bootstrap-extension.css" rel="stylesheet">
@@ -93,7 +93,7 @@
                         <!-- /input-group -->
                     </li>
                     <li class="user-pro">
-                        <a href="#" class="waves-effect"><img src="{{env('APP_URL')}}/storage/img/{{Session::get('img_url')}}" alt="user-img" class="img-circle"> <span class="hide-menu">{{Session::get('name')}}<span class="fa arrow"></span></span>
+                        <a href="#" class="waves-effect"><img src="{{env('APP_URL')}}/images/{{Session::get('img_url')}}" alt="user-img" class="img-circle"> <span class="hide-menu">{{Session::get('name')}}<span class="fa arrow"></span></span>
                         </a>
                         <ul class="nav nav-second-level">
                             <li><a href="{{env('APP_URL')}}/user/profile"><i class="fa fa-user"></i>Profile</a></li>

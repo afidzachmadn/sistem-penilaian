@@ -2,15 +2,15 @@
 
 @section ('sidebar-dashboard-user')
 <li class="nav-small-cap m-t-10">--- Pilihan Menu</li>
-                    <li> <a href="{{env('APP_URL')}}/user/dashboard" class="waves-effect active"><i class="fa fa-tachometer p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
+                    <li> <a href="{{env('APP_URL')}}/dashboard" class="waves-effect active"><i class="fa fa-tachometer p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
                     <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa fa-star p-r-10"></i> <span class="hide-menu waves-effect">Penilaian<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                             <li> <a href="/nilai-diri-sendiri">Diri Sendiri</a> </li>
-                            <li> <a href="javascript:void(0)">Rekan Kerja</a> </li>
+                            <li> <a href="/nilai-rekan-kerja">Rekan Kerja</a> </li>
                         </ul>
                     </li>
-                    <li> <a href="{{env('APP_URL')}}/user/dashboard" class="waves-effect"><i class="fa fa-warning p-r-10"></i> <span class="hide-menu">Komplain Nilai</span></a> </li>
-                    <li> <a href="{{env('APP_URL')}}/user/dashboard" class="waves-effect"><i class="fa fa-question-circle p-r-10"></i> <span class="hide-menu">Tips Penggunaan</span></a> </li>
+                    <li> <a href="{{env('APP_URL')}}/komplain-nilai" class="waves-effect"><i class="fa fa-warning p-r-10"></i> <span class="hide-menu">Komplain Nilai</span></a> </li>
+                    <li> <a href="{{env('APP_URL')}}/tips-penggunaan" class="waves-effect"><i class="fa fa-question-circle p-r-10"></i> <span class="hide-menu">Tips Penggunaan</span></a> </li>
 @endsection
 
 @section ('header-dashboard-user')

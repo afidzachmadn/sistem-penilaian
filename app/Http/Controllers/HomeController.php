@@ -47,4 +47,63 @@ class HomeController extends Controller
 
 
 
+   public function nilai_rekan_kerja(Request $request) {
+        $id = $request->session()->get('id');
+
+        //$statusVer = DB::table('users');
+        //$status_iso = $statusVer->where('id', $id)->first();
+        //$status_sni = $statusVer->where('id', $id)->first();
+
+        //$status_pembayaran_iso = $statusVer->where('id',$id)->first();
+        //$status_pembayaran_sni = $statusVer->where('id',$id)->first();
+
+           if($request->session()->get('login')) {
+            return view('user.rekan-kerja-form');
+        } else {
+            return view('auth.login');
+        }
+   }
+
+
+
+
+    public function komplain_nilai(Request $request) {
+        $id = $request->session()->get('id');
+
+        //$statusVer = DB::table('users');
+        //$status_iso = $statusVer->where('id', $id)->first();
+        //$status_sni = $statusVer->where('id', $id)->first();
+
+        //$status_pembayaran_iso = $statusVer->where('id',$id)->first();
+        //$status_pembayaran_sni = $statusVer->where('id',$id)->first();
+
+           if($request->session()->get('login')) {
+            return view('user.komplain-nilai');
+        } else {
+            return view('auth.login');
+        }
+   }
+
+
+   public function report_nilai_diri_sendiri(Request $request) {
+        $id = $request->session()->get('id');
+
+        //$statusVer = DB::table('users');
+        //$status_iso = $statusVer->where('id', $id)->first();
+        //$status_sni = $statusVer->where('id', $id)->first();
+
+        //$status_pembayaran_iso = $statusVer->where('id',$id)->first();
+        //$status_pembayaran_sni = $statusVer->where('id',$id)->first();
+
+           if($request->session()->get('login')) {
+            return view('user.lihat-hasil-report-diri-sendiri');
+        } else {
+            return view('auth.login');
+        }
+   }
+   
+
+
+
+
 }

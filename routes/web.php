@@ -20,9 +20,18 @@ Route::get('/login', "AuthController@login");
 
 Route::post('/login-proses', "AuthController@bacadatabase");
 
+Route::get('/logout', "AuthController@logout");
+
 Route::get('/dashboard', 'HomeController@dashboard');
 
 Route::get('/nilai-diri-sendiri', 'HomeController@nilai_diri_sendiri');
+
+Route::get('/nilai-rekan-kerja', 'HomeController@nilai_rekan_kerja');
+
+Route::get('/komplain-nilai', 'HomeController@komplain_nilai');
+
+Route::get('/report-nilai-diri-sendiri', 'HomeController@report_nilai_diri_sendiri');
+
 
 
 

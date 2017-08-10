@@ -29,9 +29,9 @@ return [
     |
     */
 
-    'lifetime' => 120,
+    'lifetime' => 60,
 
-    'expire_on_close' => false,
+    'expire_on_close' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -44,7 +44,7 @@ return [
     |
     */
 
-    'encrypt' => false,
+    'encrypt' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -122,7 +122,7 @@ return [
     |
     */
 
-    'cookie' => 'laravel_session',
+    'cookie' => 'Sistem_Penilaian_PT_BPR_Dinamika_Bangun_Arta',
 
     /*
     |--------------------------------------------------------------------------

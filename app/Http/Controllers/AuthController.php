@@ -15,6 +15,13 @@ class AuthController extends Controller
         }
     }
 
+
+    public function logout(Request $request) {
+        $request->session()->flush();
+        return redirect()->action('AuthController@login');
+    }
+    
+
     public function bacadatabase(Request $request) {
         $email = $request->input('email');
         $password=$request->input('password');
