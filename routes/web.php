@@ -32,6 +32,10 @@ Route::get('/komplain-nilai', 'HomeController@komplain_nilai');
 
 Route::get('/report-nilai-diri-sendiri', 'HomeController@report_nilai_diri_sendiri');
 
+Route::get('/report-nilai-dari-rekan-kerja-dan-atasan', 'HomeController@report_nilai_dari_rekan_kerja_dan_atasan');
+
+Route::get('/data-diri', 'HomeController@data_diri');
+
 
 
 

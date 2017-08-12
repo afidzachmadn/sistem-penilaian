@@ -36,13 +36,13 @@
 @section("isi-dashboard-user")
  <!-- .row -->
 <div class="col-md-12">
-    <div class="panel panel-danger">
-        <div class="panel-heading"> Form Penilaian Untuk Rekan Kerja</div>
+    <div class="panel panel-success">
+        <div class="panel-heading"> Form Penilaian Untuk Diri Sendiri</div>
             <div class="panel-wrapper collapse in" aria-expanded="true">
                 <div class="panel-body">
                     <form action="#" class="form-horizontal">
                         <div class="form-body">
-                            <h3 class="box-title">Data Rekan Kerja Anda</h3>
+                            <h3 class="box-title">Data Diri</h3>
                             <hr class="m-t-0 m-b-40">
                             <div class="row">
                                 <div class="col-md-6">
@@ -101,10 +101,22 @@
 
 
 
-                            <h3 class="box-title">Form Penilaian Rekan Kerja Anda</h3>
+                            <h3 class="box-title">Form Penilaian</h3>
                             <hr class="m-t-0 m-b-40">
                                             <!--/row-->
                             <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="control-label">Penilaian Untuk:</label>
+                                        <select class="form-control" data-placeholder="Choose a Category" tabindex="1">
+                                        <option value="Category 1">Category 1</option>
+                                        <option value="Category 2">Category 2</option>
+                                        <option value="Category 3">Category 5</option>
+                                        <option value="Category 4">Category 4</option>
+                                        </select>
+                                    </div>
+                                </div>
+
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="control-label col-md-3">Kesetiaan</label>
@@ -177,23 +189,33 @@
                                 <div class="col-md-6">
                                     <div class="row">
                                         <div class="col-md-offset-3 col-md-9">
-                                            <button type="submit" class="btn btn-danger">Submit
+                                            <button type="submit" class="btn btn-success">Submit
                                             </button>
                                             <button type="button" class="btn btn-default">Cancel
                                             </button>
                                         </div>
                                     </div>
+</br>
+                                   <!-- <div class="row">
+                                       
+                                    </div> -->
                                 </div>
-                                        <div class="col-md-6"> 
-                                        </div>
+                                        
                             </div>
                         </div>
                     </form>
+                     <div class="col-sm-12">
+                                            <a href="/report-nilai-dari-rekan-kerja-dan-atasan">
+                                            <div  class="btn btn-block btn-warning" >Lihat hasil nilai dari atasan dan rekan kerja
+                                            </div>
+                                            </a>
+                                        </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 
 @endsection

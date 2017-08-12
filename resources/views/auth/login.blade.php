@@ -37,7 +37,7 @@
             <div class="white-box">
                 <form class="form-horizontal form-material" id="loginform" action="{{url('login-proses')}}" method="post">
                 {{ csrf_field() }}
-                    <a href="javascript:void(0)" class="text-center db"><img src="{{env('APP_URL')}}/images/bisqa.png" alt="Home" />
+                    <a href="javascript:void(0)" class="text-center db"><img src="{{env('APP_URL')}}/images/logo-1.png" alt="Home" class="img-responsive" />
                         </a>
                     <div class="form-group m-t-40">
                         <div class="col-xs-12">

@@ -185,18 +185,20 @@
                                         </div>
                                     </div>
 </br>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                            <a href="/report-nilai-diri-sendiri">
-                            <div  class="btn btn-block btn-warning" >Lihat hasil nilai</div>
-                            </a>
-                        </div>
-                                    </div>
+                                   <!-- <div class="row">
+                                       
+                                    </div> -->
                                 </div>
                                         
                             </div>
                         </div>
                     </form>
+                     <div class="col-sm-12">
+                                            <a href="/report-nilai-diri-sendiri">
+                                            <div  class="btn btn-block btn-warning" >Lihat hasil nilai yang anda buat sendiri
+                                            </div>
+                                            </a>
+                                        </div>
                 </div>
             </div>
         </div>

@@ -69,6 +69,22 @@ class Users extends Migration
             $table->float('nilai_rata_rata')->nullable();
            
         }); 
+
+
+        Schema::create('komplain-nilai', function (Blueprint $table) {
+            $table->integer('id')->nullable();
+            $table->string('nama', 100);
+            $table->string('email', 100)->unique();
+            $table->string('nik',100);
+            $table->string('pangkat,golonganruang',100)->nullable();
+            $table->string('bagian',100)->nullable();
+            $table->string('jabatan',100)->nullable();
+            $table->string('isi-komplain',1000)->nullable();
+            $table->string('tanggapan-dari-pejabat-penilai',1000)->nullable();
+            $table->string('keputusan-dari-atasan-pejabat-penilai',1000)->nullable();
+            
+           
+        });
     }
 
     /**

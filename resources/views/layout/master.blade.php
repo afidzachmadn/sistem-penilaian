@@ -18,7 +18,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="{{env('APP_URL')}}/images/bisqa.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{env('APP_URL')}}/images/logo-1.png">
 
     <title>Sistem Penilaian Terpadu - PT. BPR DINAMIKA BANGUN ARTA</title>
       <!-- Bootstrap Core CSS -->
@@ -62,7 +62,7 @@
         <nav class="navbar navbar-default navbar-static-top m-b-0">
             <div class="navbar-header">
                 <!-- Toggle icon for mobile view --><a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
-                <div class="top-left-part"><a class="logo" href="/user/dashboard"><b><img src="{{env('APP_URL')}}/plugins/images/eliteadmin-logo.png" alt="home" /></b><span class="hidden-xs"><strong>Performs</strong>&nbspsystems</span></a></div>
+                <div class="top-left-part"><a class="logo" href="/dashboard"><b><img src="{{env('APP_URL')}}/plugins/images/eliteadmin-logo.png" alt="home" /></b><span class="hidden-xs"><strong>Perform</strong>systems</span></a></div>
                 <!-- /Logo -->
                 <!-- Search input and Toggle icon -->
                 <ul class="nav navbar-top-links navbar-right hidden-xs">
@@ -96,8 +96,8 @@
                         <a href="#" class="waves-effect"><img src="{{env('APP_URL')}}/images/{{Session::get('img_url')}}" alt="user-img" class="img-circle"> <span class="hide-menu">{{Session::get('name')}}<span class="fa arrow"></span></span>
                         </a>
                         <ul class="nav nav-second-level">
-                            <li><a href="{{env('APP_URL')}}/user/profile"><i class="fa fa-user"></i>Profile</a></li>
-                             <li><a href="{{env('APP_URL')}}/user/edit-profile"><i class="fa fa-pencil-square"></i>Edit Profile</a></li>
+                            <li><a href="/data-diri"><i class="fa fa-user"></i>Data Diri</a></li>
+                             <li><a href="/edit-data-diri"><i class="fa fa-pencil-square"></i>Edit Data Diri</a></li>
                             <li><a href="{{env('APP_URL')}}/logout"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
                     </li>
@@ -180,6 +180,21 @@
     <script src="{{env('APP_URL')}}/plugins/bower_components/bootstrap-extension/js/bootstrap-extension.min.js"></script>
     <!-- Menu Plugin JavaScript -->
     <script src="{{env('APP_URL')}}/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.js"></script>
+    <script src="js/jquery.PrintArea.js" type="text/JavaScript"></script>
+    <script>
+        $(document).ready(function () {
+            $("#print").click(function () {
+                var mode = 'iframe'; //popup
+                var close = mode == "popup";
+                var options = {
+                    mode: mode
+                    , popClose: close
+                };
+                $("div.printableArea").printArea(options);
+            });
+        });
+    </script>
+
     <!--slimscroll JavaScript -->
     <script src="{{env('APP_URL')}}/js/jquery.slimscroll.js"></script>
     <!--Wave Effects -->
