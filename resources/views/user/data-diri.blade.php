@@ -38,7 +38,7 @@
 
 <div class="col-md-4 col-xs-12">
                         <div class="white-box">
-                            <div class="user-bg"> <img width="100%" alt="user" src="{{env('APP_URL')}}/images/{{$data_diri->img_url}}"> 
+                            <div class="user-bg"> <img width="100%" alt="user" src="{{env('APP_URL')}}/storage/foto/{{$data_diri->img_url}}"> 
                             </div>
                             <div class="user-btm-box">
                                 <!-- .row -->
@@ -95,61 +95,66 @@
 <div class="white-box">
 <div class="tab-content">
 <div class="tab-pane active" id="update">
-                                    <form class="form-material form-horizontal">
+
+                                    <form class="form-material form-horizontal" action="{{url('edit-data-diri-proses')}}" method="post" enctype="multipart/form-data">
+                                    {{csrf_field()}}
                                         <h3> Edit data diri: </h3>
                                         <hr>
                                         <hr>
+
                                         <div class="form-group">
-                                            <label class="col-md-12" for="example-text">Name</span>
-                                            </label>
-                                            <div class="col-md-12">
-                                                <input type="text" id="example-text" name="example-text" class="form-control" placeholder="enter your name" value="Jonathan Doe"> </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-12" for="bdate">Date of Birth</span>
-                                            </label>
-                                            <div class="col-md-12">
-                                                <input type="text" id="bdate" name="bdate" class="form-control mydatepicker" placeholder="enter your birth date" value="12/10/2017"> </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-12">Gender</label>
-                                            <div class="col-sm-12">
-                                                <select class="form-control">
-                                                    <option>Select Gender</option>
-                                                    <option selected="selected">Male</option>
-                                                    <option>Female</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-sm-12">Profile Image</label>
-                                            <div class="col-sm-12"> <img class="img-responsive" src="../plugins/images/big/d2.jpg" alt="" style="max-width:120px;"> </div>
+                                            <label class="col-sm-12">Foto Profil</label>
+                                            <div class="col-sm-12"> <img class="img-responsive" src="{{env('APP_URL')}}/storage/foto/{{$data_diri->img_url}}" alt="" style="max-width:120px;"> </div>
                                             <div class="col-sm-12">
                                                 <div class="fileinput fileinput-new input-group" data-provides="fileinput">
                                                     <div class="form-control" data-trigger="fileinput"> <i class="glyphicon glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div> <span class="input-group-addon btn btn-default btn-file"> <span class="fileinput-new">Select file</span> <span class="fileinput-exists">Change</span>
-                                                    <input type="file" name="..."> </span> <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a> </div>
+                                                    <input type="file" data-max-file-size="2M" data-allowed-file-extensions="pdf" name="img" data-default-file="{{$data_diri->img_url}}" value="" required=""> </span> <a href="#" class="input-group-addon btn btn-default fileinput-exists" data-dismiss="fileinput">Remove</a> </div>
                                             </div>
                                         </div>
+
                                         <div class="form-group">
-                                            <label class="col-md-12" for="special">Speciality</span>
+                                            <label class="col-md-12" for="example-text">Nama</span>
                                             </label>
                                             <div class="col-md-12">
-                                                <input type="text" id="special" name="special" class="form-control" placeholder="e.g. Dentist" value="Neurosurgeon"> </div>
+                                                <input type="text" id="example-text" name="nama" class="form-control" placeholder="enter your name" value="{{$data_diri->nama}}"> </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-12">Description</label>
-                                            <div class="col-md-12">
-                                                <textarea class="form-control" rows="3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</textarea>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-12" for="url">Website URL</span>
+                                            <label class="col-md-12" for="example-text">NIK</span>
                                             </label>
                                             <div class="col-md-12">
-                                                <input type="text" id="url" name="url" class="form-control" placeholder="your website" value="http://www.example-website.com"> </div>
+                                                <input type="text" id="example-text" name="nik" class="form-control" placeholder="enter your name" value="{{$data_diri->nik}}"> </div>
                                         </div>
-                                        <button type="submit" class="btn btn-info waves-effect waves-light m-r-10">Submit</button>
-                                        <button type="submit" class="btn btn-inverse waves-effect waves-light">Cancel</button>
+                                        
+                                        <div class="form-group">
+                                            <label class="col-md-12" for="example-text">E-mail</span>
+                                            </label>
+                                            <div class="col-md-12">
+                                                <input type="text" id="example-text" name="email" class="form-control" placeholder="enter your name" value="{{$data_diri->email}}"> </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label class="col-md-12" for="example-text">Pagkat Golongan Ruang</span>
+                                            </label>
+                                            <div class="col-md-12">
+                                                <input type="text" id="example-text" name="pangkat_golongan_ruang" class="form-control" placeholder="enter your name" value="{{$data_diri->pangkat_golongan_ruang}}"> </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-12" for="example-text">Bagian</span>
+                                            </label>
+                                            <div class="col-md-12">
+                                                <input type="text" id="example-text" name="bagian" class="form-control" placeholder="enter your name" value="{{$data_diri->bagian}}"> </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-12" for="example-text">Jabatan</span>
+                                            </label>
+                                            <div class="col-md-12">
+                                                <input type="text" id="example-text" name="jabatan" class="form-control" placeholder="enter your name" value="{{$data_diri->jabatan}}"> </div>
+                                        </div>
+
+                                        <button type="submit" class="btn btn-info waves-effect waves-light m-r-10">Ganti</button>
+                                        <button type="submit" class="btn btn-inverse waves-effect waves-light">Batal</button>
                                     </form>
                                 </div>
 </div>

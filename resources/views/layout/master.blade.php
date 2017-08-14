@@ -93,11 +93,10 @@
                         <!-- /input-group -->
                     </li>
                     <li class="user-pro">
-                        <a href="#" class="waves-effect"><img src="{{env('APP_URL')}}/images/{{Session::get('img_url')}}" alt="user-img" class="img-circle"> <span class="hide-menu">{{Session::get('name')}}<span class="fa arrow"></span></span>
+                        <a href="#" class="waves-effect"><img src="{{env('APP_URL')}}/storage/foto/{{Session::get('img_url')}}" alt="user-img" class="img-circle"> <span class="hide-menu">{{Session::get('name')}}<span class="fa arrow"></span></span>
                         </a>
                         <ul class="nav nav-second-level">
                             <li><a href="/data-diri"><i class="fa fa-user"></i>Data Diri</a></li>
-                             <li><a href="/edit-data-diri"><i class="fa fa-pencil-square"></i>Edit Data Diri</a></li>
                             <li><a href="{{env('APP_URL')}}/logout"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
                     </li>

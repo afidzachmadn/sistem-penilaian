@@ -19,7 +19,7 @@ class Users extends Migration
             $table->string('nama', 100);
             $table->string('email', 100)->unique();
             $table->string('nik',100);
-            $table->string('pangkat,golonganruang',100)->nullable();
+            $table->string('pangkat_golongan_ruang',100)->nullable();
             $table->string('bagian',100)->nullable();
             $table->string('jabatan',100)->nullable();
             $table->string('password', 500);
@@ -28,11 +28,11 @@ class Users extends Migration
         });
         
         Schema::create('nilai-diri-sendiri', function (Blueprint $table) {
-            $table->integer('id')->nullable();
+            $table->increments('id');
             $table->string('nama', 100);
             $table->string('email', 100)->unique();
             $table->string('nik',100);
-            $table->string('pangkat,golonganruang',100)->nullable();
+            $table->string('pangkat_golongan_ruang',100)->nullable();
             $table->string('bagian',100)->nullable();
             $table->string('jabatan',100)->nullable();
             $table->float('nilai_kesetiaan')->nullable();
@@ -45,46 +45,71 @@ class Users extends Migration
             $table->float('nilai_kepemimpinan')->nullable();
             $table->float('nilai_jumlah')->nullable();
             $table->float('nilai_rata_rata')->nullable();
+            $table->string('sebutan')->nullable();
+
            
         }); 
 
 
-        Schema::create('nilai-dari-orang-lain', function (Blueprint $table) {
-            $table->integer('id')->nullable();
-            $table->string('nama', 100);
-            $table->string('email', 100)->unique();
+        Schema::create('nilai-untuk-orang-lain', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nama', 100)->nullabe();
+            $table->string('email', 100)->nullable();
             $table->string('nik',100);
-            $table->string('pangkat,golonganruang',100)->nullable();
+            $table->string('pangkat_golongan_ruang',100)->nullable();
             $table->string('bagian',100)->nullable();
             $table->string('jabatan',100)->nullable();
-            $table->float('nilai_kesetiaan')->nullable();
-            $table->float('nilai_prestasi_kerja')->nullable();
-            $table->float('nilai_tanggung_jawab')->nullable();
-            $table->float('nilai_ketaatan')->nullable();
-            $table->float('nilai_kejujuran')->nullable();
-            $table->float('nilai_kerjasama')->nullable();
-            $table->float('nilai_prakarsa')->nullable();
-            $table->float('nilai_kepemimpinan')->nullable();
-            $table->float('nilai_jumlah')->nullable();
-            $table->float('nilai_rata_rata')->nullable();
+
+            $table->float('nilai_kesetiaan_untuk_karyawan_1')->nullable();
+            $table->float('nilai_prestasi_kerja_untuk_karyawan_1')->nullable();
+            $table->float('nilai_tanggung_jawab_untuk_karyawan_1')->nullable();
+            $table->float('nilai_ketaatan_untuk_karyawan_1')->nullable();
+            $table->float('nilai_kejujuran_untuk_karyawan_1')->nullable();
+            $table->float('nilai_kerjasama_untuk_karyawan_1')->nullable();
+            $table->float('nilai_prakarsa_untuk_karyawan_1')->nullable();
+            $table->float('nilai_kepemimpinan_untuk_karyawan_1')->nullable();
+            $table->float('nilai_jumlah_untuk_karyawan_1')->nullable();
+            $table->float('nilai_rata_rata_untuk_karyawan_1')->nullable();
+            $table->string('sebutan_untuk_karyawan_1')->nullable();
+            $table->string('nama_karyawan_1')->nullable();
+
+            $table->float('nilai_kesetiaan_untuk_karyawan_2')->nullable();
+            $table->float('nilai_prestasi_kerja_untuk_karyawan_2')->nullable();
+            $table->float('nilai_tanggung_jawab_untuk_karyawan_2')->nullable();
+            $table->float('nilai_ketaatan_untuk_karyawan_2')->nullable();
+            $table->float('nilai_kejujuran_untuk_karyawan_2')->nullable();
+            $table->float('nilai_kerjasama_untuk_karyawan_2')->nullable();
+            $table->float('nilai_prakarsa_untuk_karyawan_2')->nullable();
+            $table->float('nilai_kepemimpinan_untuk_karyawan_2')->nullable();
+            $table->float('nilai_jumlah_untuk_karyawan_2')->nullable();
+            $table->float('nilai_rata_rata_untuk_karyawan_2')->nullable();
+            $table->string('sebutan_untuk_karyawan_2')->nullable();
+            $table->string('nama_karyawan_2')->nullable();
+
+            $table->float('nilai_kesetiaan_untuk_pimpinan')->nullable();
+            $table->float('nilai_prestasi_kerja_untuk_pimpinan')->nullable();
+            $table->float('nilai_tanggung_jawab_untuk_pimpinan')->nullable();
+            $table->float('nilai_ketaatan_untuk_pimpinan')->nullable();
+            $table->float('nilai_kejujuran_untuk_pimpinan')->nullable();
+            $table->float('nilai_kerjasama_untuk_pimpinan')->nullable();
+            $table->float('nilai_prakarsa_untuk_pimpinan')->nullable();
+            $table->float('nilai_kepemimpinan_untuk_pimpinan')->nullable();
+            $table->float('nilai_jumlah_untuk_pimpinan')->nullable();
+            $table->float('nilai_rata_rata_untuk_pimpinan')->nullable();
+            $table->string('sebutan_untuk_pimpinan')->nullable();
+            $table->string('nama_pimpinan')->nullable();
+
+            $table->string('komplain_untuk_karyawan_yang_dinilai')->nullable();
+            $table->string('tanggapan_komplain_untuk_pimpinan')->nullable();
+            $table->string('keputusan_untuk_direksi')->nullable();
+            $table->string('nama_direksi')->nullable();
+
+
+
+
            
         }); 
 
-
-        Schema::create('komplain-nilai', function (Blueprint $table) {
-            $table->integer('id')->nullable();
-            $table->string('nama', 100);
-            $table->string('email', 100)->unique();
-            $table->string('nik',100);
-            $table->string('pangkat,golonganruang',100)->nullable();
-            $table->string('bagian',100)->nullable();
-            $table->string('jabatan',100)->nullable();
-            $table->string('isi-komplain',1000)->nullable();
-            $table->string('tanggapan-dari-pejabat-penilai',1000)->nullable();
-            $table->string('keputusan-dari-atasan-pejabat-penilai',1000)->nullable();
-            
-           
-        });
     }
 
     /**
@@ -97,6 +122,6 @@ class Users extends Migration
         //
         Schema::drop('users');
         Schema::drop('nilai-diri-sendiri');
-        Schema::drop('nilai-dari-orang-lain');
+        Schema::drop('nilai-untuk-orang-lain');
     }
 }

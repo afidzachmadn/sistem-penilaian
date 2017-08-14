@@ -16,7 +16,7 @@ class users extends Seeder
             'nama' => 'parto',
             'email' => 'parto@local.com',
             'nik' => '12345678910',
-            'pangkat,golonganruang' => 'pelaksana,3B',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
             'bagian' => 'Teknologi Informasi',
             'jabatan' => 'Supervisor',
             'password' => encrypt('parto'),
@@ -27,7 +27,7 @@ class users extends Seeder
             'nama' => 'adit',
             'email' => 'adit@local.com',
             'nik' => '12345678911',
-            'pangkat,golonganruang' => 'pelaksana,3B',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
             'bagian' => 'Teknologi Informasi',
             'jabatan' => 'Supervisor',
             'password' => encrypt('adit'),
@@ -38,7 +38,7 @@ class users extends Seeder
             'nama' => 'bapak',
             'email' => 'bapak@local.com',
             'nik' => '12345678912',
-            'pangkat,golonganruang' => 'pelaksana,3B',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
             'bagian' => 'Teknologi Informasi',
             'jabatan' => 'Supervisor',
             'password' => encrypt('bapak'),
@@ -49,7 +49,7 @@ class users extends Seeder
             'nama' => 'ciripa',
             'email' => 'ciripa@local.com',
             'nik' => '12345678913',
-            'pangkat,golonganruang' => 'pelaksana,3B',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
             'bagian' => 'Teknologi Informasi',
             'jabatan' => 'Supervisor',
             'password' => encrypt('ciripa'),
@@ -60,7 +60,7 @@ class users extends Seeder
             'nama' => 'pras',
             'email' => 'pras@local.com',
             'nik' => '12345678914',
-            'pangkat,golonganruang' => 'pelaksana,3B',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
             'bagian' => 'Teknologi Informasi',
             'jabatan' => 'Supervisor',
             'password' => encrypt('pras'),
@@ -71,7 +71,7 @@ class users extends Seeder
             'nama' => 'elvis',
             'email' => 'elvis@local.com',
             'nik' => '12345678915',
-            'pangkat,golonganruang' => 'pelaksana,3B',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
             'bagian' => 'Teknologi Informasi',
             'jabatan' => 'Supervisor',
             'password' => encrypt('elvis'),
@@ -82,7 +82,7 @@ class users extends Seeder
             'nama' => 'handoko',
             'email' => 'handoko@local.com',
             'nik' => '12345678916',
-            'pangkat,golonganruang' => 'pelaksana,3B',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
             'bagian' => 'Teknologi Informasi',
             'jabatan' => 'Supervisor',
             'password' => encrypt('handoko'),
@@ -93,7 +93,7 @@ class users extends Seeder
             'nama' => 'suratno',
             'email' => 'suratno@local.com',
             'nik' => '12345678917',
-            'pangkat,golonganruang' => 'pelaksana,3B',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
             'bagian' => 'Teknologi Informasi',
             'jabatan' => 'Supervisor',
             'password' => encrypt('suratno'),
@@ -104,7 +104,7 @@ class users extends Seeder
             'nama' => 'dery',
             'email' => 'dery@local.com',
             'nik' => '12345678918',
-            'pangkat,golonganruang' => 'pelaksana,3B',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
             'bagian' => 'Teknologi Informasi',
             'jabatan' => 'Supervisor',
             'password' => encrypt('dery'),
@@ -115,7 +115,7 @@ class users extends Seeder
             'nama' => 'bintang',
             'email' => 'bintang@local.com',
             'nik' => '12345678919',
-            'pangkat,golonganruang' => 'pelaksana,3B',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
             'bagian' => 'Teknologi Informasi',
             'jabatan' => 'Supervisor',
             'password' => encrypt('bintang'),
@@ -126,11 +126,222 @@ class users extends Seeder
             'nama' => 'dino',
             'email' => 'dino@local.com',
             'nik' => '12345678920',
-            'pangkat,golonganruang' => 'pelaksana,3B',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
             'bagian' => 'Teknologi Informasi',
             'jabatan' => 'Supervisor',
             'password' => encrypt('dino'),
             'img_url' => 'users.png',
         ]);
+
+    
+    
+        //======================================================================//
+
+
+        
+        DB::table('nilai-diri-sendiri')->insert([
+            'nama' => 'parto',
+            'email' => 'parto@local.com',
+            'nik' => '12345678910',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
+            'bagian' => 'Teknologi Informasi',
+            'jabatan' => 'Supervisor',
+        ]);
+
+        DB::table('nilai-diri-sendiri')->insert([
+            'nama' => 'adit',
+            'email' => 'adit@local.com',
+            'nik' => '12345678911',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
+            'bagian' => 'Teknologi Informasi',
+            'jabatan' => 'Supervisor',
+        ]);
+
+        DB::table('nilai-diri-sendiri')->insert([
+            'nama' => 'bapak',
+            'email' => 'bapak@local.com',
+            'nik' => '12345678912',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
+            'bagian' => 'Teknologi Informasi',
+            'jabatan' => 'Supervisor',
+        ]);
+
+        DB::table('nilai-diri-sendiri')->insert([
+            'nama' => 'ciripa',
+            'email' => 'ciripa@local.com',
+            'nik' => '12345678913',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
+            'bagian' => 'Teknologi Informasi',
+            'jabatan' => 'Supervisor',
+        ]);
+
+        DB::table('nilai-diri-sendiri')->insert([
+            'nama' => 'pras',
+            'email' => 'pras@local.com',
+            'nik' => '12345678914',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
+            'bagian' => 'Teknologi Informasi',
+            'jabatan' => 'Supervisor',
+        ]);
+
+        DB::table('nilai-diri-sendiri')->insert([
+            'nama' => 'elvis',
+            'email' => 'elvis@local.com',
+            'nik' => '12345678915',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
+            'bagian' => 'Teknologi Informasi',
+            'jabatan' => 'Supervisor',
+        ]);
+
+        DB::table('nilai-diri-sendiri')->insert([
+            'nama' => 'handoko',
+            'email' => 'handoko@local.com',
+            'nik' => '12345678916',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
+            'bagian' => 'Teknologi Informasi',
+            'jabatan' => 'Supervisor',
+        ]);
+
+        DB::table('nilai-diri-sendiri')->insert([
+            'nama' => 'suratno',
+            'email' => 'suratno@local.com',
+            'nik' => '12345678917',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
+            'bagian' => 'Teknologi Informasi',
+            'jabatan' => 'Supervisor',
+        ]);
+
+        DB::table('nilai-diri-sendiri')->insert([
+            'nama' => 'dery',
+            'email' => 'dery@local.com',
+            'nik' => '12345678918',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
+            'bagian' => 'Teknologi Informasi',
+            'jabatan' => 'Supervisor',
+        ]);
+
+        DB::table('nilai-diri-sendiri')->insert([
+            'nama' => 'bintang',
+            'email' => 'bintang@local.com',
+            'nik' => '12345678919',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
+            'bagian' => 'Teknologi Informasi',
+            'jabatan' => 'Supervisor',
+        ]);
+
+        DB::table('nilai-diri-sendiri')->insert([
+            'nama' => 'dino',
+            'email' => 'dino@local.com',
+            'nik' => '12345678920',
+            'pangkat_golongan_ruang' => 'pelaksana,3B',
+            'bagian' => 'Teknologi Informasi',
+            'jabatan' => 'Supervisor',
+        ]);
+
+
+
+//============================================================================================//
+
+
+DB::table('nilai-untuk-orang-lain')->insert([
+    'nama' => 'parto',
+    'email' => 'parto@local.com',
+    'nik' => '12345678910',
+    'pangkat_golongan_ruang' => 'pelaksana,3B',
+    'bagian' => 'Teknologi Informasi',
+    'jabatan' => 'Supervisor',
+]);
+
+DB::table('nilai-untuk-orang-lain')->insert([
+    'nama' => 'adit',
+    'email' => 'adit@local.com',
+    'nik' => '12345678911',
+    'pangkat_golongan_ruang' => 'pelaksana,3B',
+    'bagian' => 'Teknologi Informasi',
+    'jabatan' => 'Supervisor',
+]);
+
+DB::table('nilai-untuk-orang-lain')->insert([
+    'nama' => 'bapak',
+    'email' => 'bapak@local.com',
+    'nik' => '12345678912',
+    'pangkat_golongan_ruang' => 'pelaksana,3B',
+    'bagian' => 'Teknologi Informasi',
+    'jabatan' => 'Supervisor',
+]);
+
+DB::table('nilai-untuk-orang-lain')->insert([
+    'nama' => 'ciripa',
+    'email' => 'ciripa@local.com',
+    'nik' => '12345678913',
+    'pangkat_golongan_ruang' => 'pelaksana,3B',
+    'bagian' => 'Teknologi Informasi',
+    'jabatan' => 'Supervisor',
+]);
+
+DB::table('nilai-untuk-orang-lain')->insert([
+    'nama' => 'pras',
+    'email' => 'pras@local.com',
+    'nik' => '12345678914',
+    'pangkat_golongan_ruang' => 'pelaksana,3B',
+    'bagian' => 'Teknologi Informasi',
+    'jabatan' => 'Supervisor',
+]);
+
+DB::table('nilai-untuk-orang-lain')->insert([
+    'nama' => 'elvis',
+    'email' => 'elvis@local.com',
+    'nik' => '12345678915',
+    'pangkat_golongan_ruang' => 'Jendral,10A',
+    'bagian' => 'Teknologi Informasi',
+    'jabatan' => 'Direksi',
+]);
+
+DB::table('nilai-untuk-orang-lain')->insert([
+    'nama' => 'handoko',
+    'email' => 'handoko@local.com',
+    'nik' => '12345678916',
+    'pangkat_golongan_ruang' => 'Jendral,10B',
+    'bagian' => 'Teknologi Informasi',
+    'jabatan' => 'Direksi',
+]);
+
+DB::table('nilai-untuk-orang-lain')->insert([
+    'nama' => 'suratno',
+    'email' => 'suratno@local.com',
+    'nik' => '12345678917',
+    'pangkat_golongan_ruang' => 'Inspektur,8A',
+    'bagian' => 'Teknologi Informasi',
+    'jabatan' => 'Pimpinan',
+]);
+
+DB::table('nilai-untuk-orang-lain')->insert([
+    'nama' => 'dery',
+    'email' => 'dery@local.com',
+    'nik' => '12345678918',
+    'pangkat_golongan_ruang' => 'Inspektur,8c',
+    'bagian' => 'Teknologi Informasi',
+    'jabatan' => 'Pimpinan',
+]);
+
+DB::table('nilai-untuk-orang-lain')->insert([
+    'nama' => 'bintang',
+    'email' => 'bintang@local.com',
+    'nik' => '12345678919',
+    'pangkat_golongan_ruang' => 'pelaksana,3B',
+    'bagian' => 'Teknologi Informasi',
+    'jabatan' => 'Supervisor',
+]);
+
+DB::table('nilai-untuk-orang-lain')->insert([
+    'nama' => 'dino',
+    'email' => 'dino@local.com',
+    'nik' => '12345678920',
+    'pangkat_golongan_ruang' => 'pelaksana,3B',
+    'bagian' => 'Teknologi Informasi',
+    'jabatan' => 'Supervisor',
+]);
+
+
     }
 }

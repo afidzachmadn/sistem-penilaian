@@ -43,14 +43,18 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="pull-left"> <address>
-                                            <h3> &nbsp;<b class="text-danger">Parto</b></h3>
-                                            <p class="text-muted m-l-5">12345678910,
-                                                <br/> Gol 1A,
-                                                <br/> Teknologi Informasi,
-                                                <br/> Supervisor,
-                                                <br/> parto@local.com</p>
+                                            <h3> &nbsp;<b class="text-danger">{{$lihat_user->nama}}</b></h3>
+                                            <p class="text-muted m-l-5">{{$lihat_user->nik}},
+                                                <br/> {{$lihat_user->pangkat_golongan_ruang}},
+                                                <br/> {{$lihat_user->bagian}},
+                                                <br/> {{$lihat_user->jabatan}},
+                                                <br/> {{$lihat_user->email}}</p>
                                         </address> </div>
-                                    <div class="pull-right text-right"> <address>
+                                    <div class="pull-right text-right">
+                                        <a href=""><img src="{{env('APP_URL')}}/storage/foto/{{$lihat_user->img_url}}" style="max-width:200px; max-height:150px"/>
+                                        </a>
+                                        <br>
+                                         <address>
                                             <p class="m-t-30"><b>Diakses pada :</b> <i class="fa fa-calendar"></i> {{$date}}</p>
                                            
                                         </address> </div>
@@ -69,7 +73,7 @@
                                                                 <div class="form-group">
                                                                     <label class="control-label col-md-3">Kesetiaan:</label>
                                                                     <div class="col-md-9">
-                                                                        <p class="form-control-static"> 50 </p>
+                                                                        <p class="form-control-static">{{$lihat_table_nilai_diri_sendiri->nilai_kesetiaan}}</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -78,7 +82,7 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-3">Prestasi Kerja:</label>
                                                         <div class="col-md-9">
-                                                            <p class="form-control-static"> 89 </p>
+                                                            <p class="form-control-static">{{$lihat_table_nilai_diri_sendiri->nilai_prestasi_kerja}} </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -90,7 +94,7 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-3">Tanggung Jawab:</label>
                                                         <div class="col-md-9">
-                                                            <p class="form-control-static"> 20 </p>
+                                                            <p class="form-control-static">{{$lihat_table_nilai_diri_sendiri->nilai_tanggung_jawab}} </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -99,7 +103,7 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-3">Ketaatan:</label>
                                                         <div class="col-md-9">
-                                                            <p class="form-control-static"> 67 </p>
+                                                            <p class="form-control-static">{{$lihat_table_nilai_diri_sendiri->nilai_ketaatan}} </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -111,7 +115,7 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-3">Kejujuran:</label>
                                                         <div class="col-md-9">
-                                                            <p class="form-control-static"> 45 </p>
+                                                            <p class="form-control-static">{{$lihat_table_nilai_diri_sendiri->nilai_kejujuran}} </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -120,7 +124,7 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-3">Kerjasama:</label>
                                                         <div class="col-md-9">
-                                                            <p class="form-control-static"> 50 </p>
+                                                            <p class="form-control-static">{{$lihat_table_nilai_diri_sendiri->nilai_kerjasama}} </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -129,7 +133,7 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-3">Prakarsa:</label>
                                                         <div class="col-md-9">
-                                                            <p class="form-control-static"> 60 </p>
+                                                            <p class="form-control-static">{{$lihat_table_nilai_diri_sendiri->nilai_prakarsa}} </p>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -138,9 +142,17 @@
                                                     <div class="form-group">
                                                         <label class="control-label col-md-3">Kepemimpinan:</label>
                                                         <div class="col-md-9">
-                                                            <p class="form-control-static"> 60 </p>
+                                                            <p class="form-control-static">{{$lihat_table_nilai_diri_sendiri->nilai_kepemimpinan}} </p>
                                                         </div>
                                                     </div>
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    
+                                                        <div class="col-md-9">
+                                                            <p class="form-control-static"><b>*catatan:</b>&nbsp nilai maksimal per poin = 5</p>
+                                                        </div>
+                                
                                                 </div>
 
                                                 
@@ -158,10 +170,10 @@
 
                                 <div class="col-md-12">
                                     <div class="pull-right m-t-30 text-right">
-                                        <p>Total Nilai: 286</p>
+                                        <p>Total Nilai:{{$lihat_table_nilai_diri_sendiri->nilai_jumlah}}</p>
                                         <hr>
-                                        <h3><b>Rata-Rata :</b>30</h3>
-                                        <h3><b>Sebutan :</b>Sangat Kurang</h3> </div>
+                                        <h3><b>Rata-Rata :</b>{{$lihat_table_nilai_diri_sendiri->nilai_rata_rata}}</h3>
+                                        <h3><b>Sebutan :</b>{{$lihat_table_nilai_diri_sendiri->sebutan}}</h3> </div>
                                     <div class="clearfix"></div>
                                     <hr>
                                 </div>
