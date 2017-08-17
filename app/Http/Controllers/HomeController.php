@@ -33,10 +33,10 @@ class HomeController extends Controller
         $LihatUser = DB::table('users');
         $LihatUserNext = $LihatUser->where('id', $id)->first();
 
-        $LihatTableNilaiDiriSendiri= DB::table('nilai-diri-sendiri')->where('id',$id)->first();
+        $LihatNilai= DB::table('nilai-dari-karyawan-untuk-karyawan');
 
            if($request->session()->get('login')) {
-            return view('user.diri-sendiri-form',array('lihat_user' => $LihatUserNext, 'lihat_table_nilai_diri_sendiri' => $LihatTableNilaiDiriSendiri));
+            return view('user.diri-sendiri-form',array('lihat_user' => $LihatUserNext, 'lihat_nilai' => $LihatNilai));
         } else {
             return view('auth.login');
         }
@@ -50,55 +50,109 @@ class HomeController extends Controller
         $nama = $request->get('nama');
         $nik = $request->get('nik');
         $email = $request->get('email');
-        $pangkat_golongan_ruang = $request->get('pangkat_golongan_ruang');
+        $no_hp = $request->get('no_hp');
         $bagian = $request->get('bagian');
         $jabatan = $request->get('jabatan');
 
-        $nilai_kesetiaan = $request->get('nilai_kesetiaan');
-        $nilai_prestasi_kerja = $request->get('nilai_prestasi_kerja');
-        $nilai_tanggung_jawab = $request->get('nilai_tanggung_jawab');
-        $nilai_ketaatan = $request->get('nilai_ketaatan');
-        $nilai_kejujuran = $request->get('nilai_kejujuran');
-        $nilai_kerjasama = $request->get('nilai_kerjasama');
-        $nilai_prakarsa = $request->get('nilai_prakarsa');
-        $nilai_kepemimpinan = $request->get('nilai_kepemimpinan');
-        //dd($nilai_kesetiaan);
-        //dd($nilai_prestasi_kerja);
-        //dd($nilai_ketaatan);
-        //dd($nilai_kejujuran);
-        //dd($nilai_kerjasama);
-        //dd($nilai_prakarsa);
-        //($nilai_kepemimpinan);
+
+        $kompetensi_4 = $request->get('kompetensi_4');
+        $kompetensi_4_alasan = $request->get('kompetensi_4_alasan');
+        $kompetensi_6 = $request->get('kompetensi_6');
+        $kompetensi_6_alasan = $request->get('kompetensi_6_alasan');
+        $kompetensi_7 = $request->get('kompetensi_7');
+        $kompetensi_7_alasan = $request->get('kompetensi_7_alasan');
+        $kompetensi_8 = $request->get('kompetensi_8');
+        $kompetensi_8_alasan = $request->get('kompetensi_8_alasan');
+        $kompetensi_10 = $request->get('kompetensi_10');
+        $kompetensi_10_alasan = $request->get('kompetensi_10_alasan');
+        $kompetensi_11 = $request->get('kompetensi_11');
+        $kompetensi_11_alasan = $request->get('kompetensi_11_alasan');
+        $kompetensi_13 = $request->get('kompetensi_13');
+        $kompetensi_13_alasan = $request->get('kompetensi_13_alasan');
+        $kompetensi_17 = $request->get('kompetensi_17');
+        $kompetensi_17_alasan = $request->get('kompetensi_17_alasan');
 
 
-        $nilai_jumlah= $nilai_kesetiaan+$nilai_prestasi_kerja+$nilai_tanggung_jawab+$nilai_ketaatan                     +$nilai_kejujuran+$nilai_kerjasama+$nilai_prakarsa+$nilai_kepemimpinan;
-        //dd($nilai_jumlah);
-        $nilai_rata_rata = ($nilai_kesetiaan+$nilai_prestasi_kerja+$nilai_tanggung_jawab                                 +$nilai_ketaatan +$nilai_kejujuran+$nilai_kerjasama+$nilai_prakarsa                            +$nilai_kepemimpinan)/8;
-        if($nilai_rata_rata>=1 && $nilai_rata_rata<=1.5){
+
+
+        $jumlah= $kompetensi_4+$kompetensi_6+$kompetensi_7+$kompetensi_8+$kompetensi_10+$kompetensi_11+$kompetensi_13+$kompetensi_17;
+        $rata_rata = $jumlah/8;
+
+        if($rata_rata>=1 && $rata_rata<=1.5){
             $sebutan = 'Sangat Kurang';
         }
-        elseif($nilai_rata_rata>=1.6 && $nilai_rata_rata<=2.5){
+        elseif($rata_rata>=1.6 && $rata_rata<=2.5){
             $sebutan = 'Kurang';
         }
-        elseif($nilai_rata_rata>=2.6 && $nilai_rata_rata<=3.5){
+        elseif($rata_rata>=2.6 && $rata_rata<=3.5){
             $sebutan = 'Cukup';
         }
-        elseif($nilai_rata_rata>=3.5 && $nilai_rata_rata<=4.5){
+        elseif($rata_rata>=3.5 && $rata_rata<=4.5){
             $sebutan = 'Baik';
         }
-        elseif($nilai_rata_rata>=4.6 && $nilai_rata_rata<=5){
+        elseif($rata_rata>=4.6 && $rata_rata<=5){
             $sebutan = 'Sangat Baik';
         }
         else{
             $sebutan = "kesalahan-input-nilai";
         }
-        //dd($nilai_rata_rata);
+        //dd($rata_rata);
+      //  where([['status_pembayaran_SNI','=','terbayar'],['surat_pengesahan_SNI','=','default-pengesahan-sni.pdf'],])
 
+        $NilaiDiriSendiriDbCheck = DB::table('nilai-dari-diri-sendiri-untuk-diri-sendiri')->where('id',$id)->get();
+        //dd(isset($NilaiDiriSendiriDbCheck[0]));
 
-        $NilaiDiriSendiriDb = DB::table('nilai-diri-sendiri')->where('id', $id)
-                                    ->update(['nama' => $nama, 'nik' => $nik, 'email' => $email, 'pangkat_golongan_ruang' => $pangkat_golongan_ruang, 'bagian' => $bagian, 'jabatan' => $jabatan, 'id' => $id, 'nilai_kesetiaan' => $nilai_kesetiaan, 'nilai_prestasi_kerja' => $nilai_prestasi_kerja, 'nilai_tanggung_jawab' => $nilai_tanggung_jawab, 'nilai_ketaatan' =>$nilai_ketaatan, 'nilai_kejujuran' => $nilai_kejujuran, 'nilai_kerjasama' => $nilai_kerjasama, 'nilai_prakarsa' => $nilai_prakarsa, 'nilai_kepemimpinan' => $nilai_kepemimpinan, 'nilai_jumlah' => $nilai_jumlah,'nilai_rata_rata' => $nilai_rata_rata, 'sebutan' => $sebutan]);
-        //dd($NilaiDiriSendiriDb);
-        return redirect()->action('HomeController@nilai_diri_sendiri');
+        if(isset($NilaiDiriSendiriDbCheck[0]) == true ){
+            $NilaiDiriSendiriDb = DB::table('nilai-dari-diri-sendiri-untuk-diri-sendiri')
+            ->update(['nama' => $nama, 'nik' => $nik, 'email' => $email, 'no_hp' => $no_hp, 'bagian' => $bagian, 'jabatan' => $jabatan, 'id' => $id, 
+            'kompetensi_4' => $kompetensi_4,
+            'kompetensi_4_alasan' => $kompetensi_4_alasan,
+            'kompetensi_6' => $kompetensi_6,
+            'kompetensi_6_alasan' => $kompetensi_6_alasan,
+            'kompetensi_7' => $kompetensi_7,
+            'kompetensi_7_alasan' => $kompetensi_7_alasan,
+            'kompetensi_8' =>$kompetensi_8,
+            'kompetensi_8_alasan' => $kompetensi_8_alasan,
+            'kompetensi_10' => $kompetensi_10,
+            'kompetensi_10_alasan' => $kompetensi_10_alasan,
+            'kompetensi_11' => $kompetensi_11,
+            'kompetensi_11_alasan' => $kompetensi_11_alasan,
+            'kompetensi_13' => $kompetensi_13,
+            'kompetensi_13_alasan' => $kompetensi_13_alasan,
+            'kompetensi_17' => $kompetensi_17,
+            'kompetensi_17_alasan' => $kompetensi_17_alasan, 
+            'jumlah' => $jumlah,
+            'rata_rata' => $rata_rata,
+            'sebutan' => $sebutan,                                   
+            ]);
+            //dd($NilaiDiriSendiriDb);
+            return redirect()->action('HomeController@nilai_diri_sendiri');
+        } 
+        elseif (isset($NilaiDiriSendiriDbCheck[0]) == false ){
+            $NilaiDiriSendiriDb = DB::table('nilai-dari-diri-sendiri-untuk-diri-sendiri')
+            ->insert(['nama' => $nama, 'nik' => $nik, 'email' => $email, 'no_hp' => $no_hp, 'bagian' => $bagian, 'jabatan' => $jabatan, 'id' => $id, 
+            'kompetensi_4' => $kompetensi_4,
+            'kompetensi_4_alasan' => $kompetensi_4_alasan,
+            'kompetensi_6' => $kompetensi_6,
+            'kompetensi_6_alasan' => $kompetensi_6_alasan,
+            'kompetensi_7' => $kompetensi_7,
+            'kompetensi_7_alasan' => $kompetensi_7_alasan,
+            'kompetensi_8' =>$kompetensi_8,
+            'kompetensi_8_alasan' => $kompetensi_8_alasan,
+            'kompetensi_10' => $kompetensi_10,
+            'kompetensi_10_alasan' => $kompetensi_10_alasan,
+            'kompetensi_11' => $kompetensi_11,
+            'kompetensi_11_alasan' => $kompetensi_11_alasan,
+            'kompetensi_13' => $kompetensi_13,
+            'kompetensi_13_alasan' => $kompetensi_13_alasan,
+            'kompetensi_17' => $kompetensi_17,
+            'kompetensi_17_alasan' => $kompetensi_17_alasan, 
+            'jumlah' => $jumlah,
+            'rata_rata' => $rata_rata,
+            'sebutan' => $sebutan,                                   
+            ]);
+        }
+                                   
    }
    else{
        return view('auth.login');
@@ -357,7 +411,7 @@ class HomeController extends Controller
         $nama = $request->get('nama');
         $nik = $request->get('nik');
         $email = $request->get('email');
-        $pangkat_golongan_ruang = $request->get('pangkat_golongan_ruang');
+        $no_hp = $request->get('no_hp');
         $bagian = $request->get('bagian');
         $jabatan = $request->get('jabatan');
 
@@ -366,7 +420,9 @@ class HomeController extends Controller
         $storeFile = $file->store('public/foto');
 
         $userDb = DB::table('users')->where('id', $id)
-                                    ->update(['nama' => $nama, 'nik' => $nik, 'email' => $email, 'pangkat_golongan_ruang' => $pangkat_golongan_ruang, 'bagian' => $bagian, 'jabatan' => $jabatan, 'img_url' => $fileName]);
+        
+                                    ->update(['nama' => $nama, 'nik' => $nik, 'email' => $email, 'no_hp' => $no_hp, 'bagian' => $bagian, 'jabatan' => $jabatan, 'img_url' => $fileName]);
+        //dd($userDb);
         //dd($userDb);
         $request->session()->put('img_url', $fileName);
         return redirect()->action('HomeController@data_diri');

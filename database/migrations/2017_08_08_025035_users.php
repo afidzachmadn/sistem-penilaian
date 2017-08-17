@@ -17,9 +17,9 @@ class Users extends Migration
          Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama', 100);
-            $table->string('email', 100)->unique();
             $table->string('nik',100);
-            $table->string('pangkat_golongan_ruang',100)->nullable();
+            $table->string('email', 100)->unique();
+            $table->string('no_hp',100)->nullable();
             $table->string('bagian',100)->nullable();
             $table->string('jabatan',100)->nullable();
             $table->string('password', 500);
@@ -27,89 +27,448 @@ class Users extends Migration
             
         });
         
-        Schema::create('nilai-diri-sendiri', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('nilai-dari-diri-sendiri-untuk-diri-sendiri', function (Blueprint $table) {
+            $table->integer('id');
             $table->string('nama', 100);
-            $table->string('email', 100)->unique();
             $table->string('nik',100);
-            $table->string('pangkat_golongan_ruang',100)->nullable();
-            $table->string('bagian',100)->nullable();
-            $table->string('jabatan',100)->nullable();
-            $table->float('nilai_kesetiaan')->nullable();
-            $table->float('nilai_prestasi_kerja')->nullable();
-            $table->float('nilai_tanggung_jawab')->nullable();
-            $table->float('nilai_ketaatan')->nullable();
-            $table->float('nilai_kejujuran')->nullable();
-            $table->float('nilai_kerjasama')->nullable();
-            $table->float('nilai_prakarsa')->nullable();
-            $table->float('nilai_kepemimpinan')->nullable();
-            $table->float('nilai_jumlah')->nullable();
-            $table->float('nilai_rata_rata')->nullable();
-            $table->string('sebutan')->nullable();
-
-           
-        }); 
-
-
-        Schema::create('nilai-untuk-orang-lain', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('nama', 100)->nullabe();
             $table->string('email', 100)->nullable();
-            $table->string('nik',100);
-            $table->string('pangkat_golongan_ruang',100)->nullable();
+            $table->string('no_hp',100)->nullable();
             $table->string('bagian',100)->nullable();
             $table->string('jabatan',100)->nullable();
+            
 
-            $table->float('nilai_kesetiaan_untuk_karyawan_1')->nullable();
-            $table->float('nilai_prestasi_kerja_untuk_karyawan_1')->nullable();
-            $table->float('nilai_tanggung_jawab_untuk_karyawan_1')->nullable();
-            $table->float('nilai_ketaatan_untuk_karyawan_1')->nullable();
-            $table->float('nilai_kejujuran_untuk_karyawan_1')->nullable();
-            $table->float('nilai_kerjasama_untuk_karyawan_1')->nullable();
-            $table->float('nilai_prakarsa_untuk_karyawan_1')->nullable();
-            $table->float('nilai_kepemimpinan_untuk_karyawan_1')->nullable();
-            $table->float('nilai_jumlah_untuk_karyawan_1')->nullable();
-            $table->float('nilai_rata_rata_untuk_karyawan_1')->nullable();
-            $table->string('sebutan_untuk_karyawan_1')->nullable();
-            $table->string('nama_karyawan_1')->nullable();
+            $table->float('kompetensi_1')->nullable();
+            $table->string('kompetensi_1_alasan')->nullable();
 
-            $table->float('nilai_kesetiaan_untuk_karyawan_2')->nullable();
-            $table->float('nilai_prestasi_kerja_untuk_karyawan_2')->nullable();
-            $table->float('nilai_tanggung_jawab_untuk_karyawan_2')->nullable();
-            $table->float('nilai_ketaatan_untuk_karyawan_2')->nullable();
-            $table->float('nilai_kejujuran_untuk_karyawan_2')->nullable();
-            $table->float('nilai_kerjasama_untuk_karyawan_2')->nullable();
-            $table->float('nilai_prakarsa_untuk_karyawan_2')->nullable();
-            $table->float('nilai_kepemimpinan_untuk_karyawan_2')->nullable();
-            $table->float('nilai_jumlah_untuk_karyawan_2')->nullable();
-            $table->float('nilai_rata_rata_untuk_karyawan_2')->nullable();
-            $table->string('sebutan_untuk_karyawan_2')->nullable();
-            $table->string('nama_karyawan_2')->nullable();
+            $table->float('kompetensi_2')->nullable();
+            $table->string('kompetensi_2_alasan')->nullable();
 
-            $table->float('nilai_kesetiaan_untuk_pimpinan')->nullable();
-            $table->float('nilai_prestasi_kerja_untuk_pimpinan')->nullable();
-            $table->float('nilai_tanggung_jawab_untuk_pimpinan')->nullable();
-            $table->float('nilai_ketaatan_untuk_pimpinan')->nullable();
-            $table->float('nilai_kejujuran_untuk_pimpinan')->nullable();
-            $table->float('nilai_kerjasama_untuk_pimpinan')->nullable();
-            $table->float('nilai_prakarsa_untuk_pimpinan')->nullable();
-            $table->float('nilai_kepemimpinan_untuk_pimpinan')->nullable();
-            $table->float('nilai_jumlah_untuk_pimpinan')->nullable();
-            $table->float('nilai_rata_rata_untuk_pimpinan')->nullable();
-            $table->string('sebutan_untuk_pimpinan')->nullable();
-            $table->string('nama_pimpinan')->nullable();
+            $table->float('kompetensi_3')->nullable();
+            $table->string('kompetensi_3_alasan')->nullable();
 
-            $table->string('komplain_untuk_karyawan_yang_dinilai')->nullable();
-            $table->string('tanggapan_komplain_untuk_pimpinan')->nullable();
-            $table->string('keputusan_untuk_direksi')->nullable();
-            $table->string('nama_direksi')->nullable();
+            $table->float('kompetensi_4')->nullable();
+            $table->string('kompetensi_4_alasan')->nullable();
+
+            $table->float('kompetensi_5')->nullable();
+            $table->string('kompetensi_5_alasan')->nullable();
+
+            $table->float('kompetensi_6')->nullable();
+            $table->string('kompetensi_6_alasan')->nullable();
+
+            $table->float('kompetensi_7')->nullable();
+            $table->string('kompetensi_7_alasan')->nullable();
+
+            $table->float('kompetensi_8')->nullable();
+            $table->string('kompetensi_8_alasan')->nullable();
+
+            $table->float('kompetensi_9')->nullable();
+            $table->string('kompetensi_9_alasan')->nullable();
+
+            $table->float('kompetensi_10')->nullable();
+            $table->string('kompetensi_10_alasan')->nullable();
+
+            $table->float('kompetensi_11')->nullable();
+            $table->string('kompetensi_11_alasan')->nullable();
+            
+            $table->float('kompetensi_12')->nullable();
+            $table->string('kompetensi_12_alasan')->nullable();
+
+            $table->float('kompetensi_13')->nullable();
+            $table->string('kompetensi_13_alasan')->nullable();
+
+            $table->float('kompetensi_14')->nullable();
+            $table->string('kompetensi_14_alasan')->nullable();
+
+            $table->float('kompetensi_15')->nullable();
+            $table->string('kompetensi_15_alasan')->nullable();
+
+            $table->float('kompetensi_16')->nullable();
+            $table->string('kompetensi_16_alasan')->nullable();
+
+            $table->float('kompetensi_17')->nullable();
+            $table->string('kompetensi_17_alasan')->nullable();
+
+            $table->float('kompetensi_18')->nullable();
+            $table->string('kompetensi_18_alasan')->nullable();
+
+            $table->float('jumlah')->nullable();
+            $table->float('rata_rata')->nullable();
+            $table->string('sebutan',100)->nullable();
+
+           
+        });
+        
+        Schema::create('nilai-dari-karyawan-untuk-karyawan', function (Blueprint $table) {
+            $table->integer('id');
+            $table->string('nama', 100);
+            $table->string('nik',100);
+            $table->string('email', 100)->nullable();
+            $table->string('no_hp',100)->nullable();
+            $table->string('bagian',100)->nullable();
+            $table->string('jabatan',100)->nullable();
+            $table->float('kompetensi_1')->nullable();
+            $table->string('kompetensi_1_alasan')->nullable();
 
 
+            $table->float('kompetensi_2')->nullable();
+            $table->string('kompetensi_2_alasan')->nullable();
 
+            $table->float('kompetensi_3')->nullable();
+            $table->string('kompetensi_3_alasan')->nullable();
+
+            $table->float('kompetensi_4')->nullable();
+            $table->string('kompetensi_4_alasan')->nullable();
+
+            $table->float('kompetensi_5')->nullable();
+            $table->string('kompetensi_5_alasan')->nullable();
+
+            $table->float('kompetensi_6')->nullable();
+            $table->string('kompetensi_6_alasan')->nullable();
+
+            $table->float('kompetensi_7')->nullable();
+            $table->string('kompetensi_7_alasan')->nullable();
+
+            $table->float('kompetensi_8')->nullable();
+            $table->string('kompetensi_8_alasan')->nullable();
+
+            $table->float('kompetensi_9')->nullable();
+            $table->string('kompetensi_9_alasan')->nullable();
+
+            $table->float('kompetensi_10')->nullable();
+            $table->string('kompetensi_10_alasan')->nullable();
+
+            $table->float('kompetensi_11')->nullable();
+            $table->string('kompetensi_11_alasan')->nullable();
+            
+            $table->float('kompetensi_12')->nullable();
+            $table->string('kompetensi_12_alasan')->nullable();
+
+            $table->float('kompetensi_13')->nullable();
+            $table->string('kompetensi_13_alasan')->nullable();
+
+            $table->float('kompetensi_14')->nullable();
+            $table->string('kompetensi_14_alasan')->nullable();
+
+            $table->float('kompetensi_15')->nullable();
+            $table->string('kompetensi_15_alasan')->nullable();
+
+            $table->float('kompetensi_16')->nullable();
+            $table->string('kompetensi_16_alasan')->nullable();
+
+            $table->float('kompetensi_17')->nullable();
+            $table->string('kompetensi_17_alasan')->nullable();
+
+            $table->float('kompetensi_18')->nullable();
+            $table->string('kompetensi_18_alasan')->nullable();
+
+            $table->float('jumlah')->nullable();
+            $table->float('rata_rata')->nullable();
+            $table->string('sebutan',100)->nullable();
 
            
         }); 
 
+
+
+        Schema::create('nilai-dari-karyawan-untuk-ketua-tim', function (Blueprint $table) {
+            $table->integer('id');
+            $table->string('nama', 100);
+            $table->string('nik',100);
+            $table->string('email', 100)->nullable();
+            $table->string('no_hp',100)->nullable();
+            $table->string('bagian',100)->nullable();
+            $table->string('jabatan',100)->nullable();
+
+            $table->float('kompetensi_4')->nullable();
+            $table->string('kompetensi_4_alasan')->nullable();
+
+
+            $table->float('kompetensi_6')->nullable();
+            $table->string('kompetensi_6_alasan')->nullable();
+
+            $table->float('kompetensi_7')->nullable();
+            $table->string('kompetensi_7_alasan')->nullable();
+
+            $table->float('kompetensi_8')->nullable();
+            $table->string('kompetensi_8_alasan')->nullable();
+
+
+            $table->float('kompetensi_10')->nullable();
+            $table->string('kompetensi_10_alasan')->nullable();
+
+            $table->float('kompetensi_11')->nullable();
+            $table->string('kompetensi_11_alasan')->nullable();
+            
+
+            $table->float('kompetensi_13')->nullable();
+            $table->string('kompetensi_13_alasan')->nullable();            
+
+            $table->float('kompetensi_17')->nullable();
+            $table->string('kompetensi_17_alasan')->nullable();
+
+
+            $table->float('jumlah')->nullable();
+            $table->float('rata_rata')->nullable();
+            $table->string('sebutan',100)->nullable();
+
+           
+        }); 
+
+
+
+
+
+
+
+        Schema::create('nilai-dari-ketua-tim-untuk-karyawan', function (Blueprint $table) {
+            $table->integer('id');
+            $table->string('nama', 100);
+            $table->string('nik',100);
+            $table->string('email', 100)->nullable();
+            $table->string('no_hp',100);
+            $table->string('bagian',100)->nullable();
+            $table->string('jabatan',100)->nullable();
+
+            $table->float('kompetensi_1')->nullable();
+            $table->string('kompetensi_1_alasan')->nullable();
+
+            $table->float('kompetensi_2')->nullable();
+            $table->string('kompetensi_2_alasan')->nullable();
+
+            $table->float('kompetensi_3')->nullable();
+            $table->string('kompetensi_3_alasan')->nullable();
+
+            $table->float('kompetensi_4')->nullable();
+            $table->string('kompetensi_4_alasan')->nullable();
+
+            $table->float('kompetensi_5')->nullable();
+            $table->string('kompetensi_5_alasan')->nullable();
+
+            $table->float('kompetensi_6')->nullable();
+            $table->string('kompetensi_6_alasan')->nullable();
+
+            $table->float('kompetensi_7')->nullable();
+            $table->string('kompetensi_7_alasan')->nullable();
+
+            $table->float('kompetensi_8')->nullable();
+            $table->string('kompetensi_8_alasan')->nullable();
+
+            $table->float('kompetensi_9')->nullable();
+            $table->string('kompetensi_9_alasan')->nullable();
+
+            $table->float('kompetensi_10')->nullable();
+            $table->string('kompetensi_10_alasan')->nullable();
+
+            $table->float('kompetensi_11')->nullable();
+            $table->string('kompetensi_11_alasan')->nullable();
+
+            $table->float('kompetensi_12')->nullable();
+            $table->string('kompetensi_12_alasan')->nullable();
+
+            $table->float('kompetensi_13')->nullable();
+            $table->string('kompetensi_13_alasan')->nullable();
+
+            $table->float('kompetensi_14')->nullable();
+            $table->string('kompetensi_14_alasan')->nullable();
+
+            $table->float('kompetensi_15')->nullable();
+            $table->string('kompetensi_15_alasan')->nullable();
+
+            $table->float('kompetensi_16')->nullable();
+            $table->string('kompetensi_16_alasan')->nullable();
+
+            $table->float('kompetensi_17')->nullable();
+            $table->string('kompetensi_17_alasan')->nullable();
+
+            $table->float('kompetensi_18')->nullable();
+            $table->string('kompetensi_18_alasan')->nullable();
+
+            $table->float('jumlah')->nullable();
+            $table->float('rata_rata')->nullable();
+            $table->string('sebutan',100)->nullable();
+            
+            
+
+           
+        }); 
+
+
+
+        Schema::create('nilai-dari-direksi-untuk-ketua-tim', function (Blueprint $table) {
+            $table->integer('id');
+            $table->string('nama', 100);
+            $table->string('nik',100);
+            $table->string('email', 100)->nullable();
+            $table->string('no_hp',100)->nullable();
+            $table->string('bagian',100)->nullable();
+            $table->string('jabatan',100)->nullable();
+
+            $table->float('kompetensi_1')->nullable();
+            $table->string('kompetensi_1_alasan')->nullable();
+
+            $table->float('kompetensi_2')->nullable();
+            $table->string('kompetensi_2_alasan')->nullable();
+
+            $table->float('kompetensi_3')->nullable();
+            $table->string('kompetensi_3_alasan')->nullable();
+
+            $table->float('kompetensi_4')->nullable();
+            $table->string('kompetensi_4_alasan')->nullable();
+
+            $table->float('kompetensi_5')->nullable();
+            $table->string('kompetensi_5_alasan')->nullable();
+
+            $table->float('kompetensi_6')->nullable();
+            $table->string('kompetensi_6_alasan')->nullable();
+
+            $table->float('kompetensi_7')->nullable();
+            $table->string('kompetensi_7_alasan')->nullable();
+
+            $table->float('kompetensi_8')->nullable();
+            $table->string('kompetensi_8_alasan')->nullable();
+
+            $table->float('kompetensi_9')->nullable();
+            $table->string('kompetensi_9_alasan')->nullable();
+
+            $table->float('kompetensi_10')->nullable();
+            $table->string('kompetensi_10_alasan')->nullable();
+
+            $table->float('kompetensi_11')->nullable();
+            $table->string('kompetensi_11_alasan')->nullable();
+
+            $table->float('kompetensi_12')->nullable();
+            $table->string('kompetensi_12_alasan')->nullable();
+
+            $table->float('kompetensi_13')->nullable();
+            $table->string('kompetensi_13_alasan')->nullable();
+
+            $table->float('kompetensi_14')->nullable();
+            $table->string('kompetensi_14_alasan')->nullable();
+
+            $table->float('kompetensi_15')->nullable();
+            $table->string('kompetensi_15_alasan')->nullable();
+
+            $table->float('kompetensi_16')->nullable();
+            $table->string('kompetensi_16_alasan')->nullable();
+
+            $table->float('kompetensi_17')->nullable();
+            $table->string('kompetensi_17_alasan')->nullable();
+
+            $table->float('kompetensi_18')->nullable();
+            $table->string('kompetensi_18_alasan')->nullable();
+
+            $table->float('jumlah')->nullable();
+            $table->float('rata_rata')->nullable();
+            $table->string('sebutan',100)->nullable();
+            
+            
+
+           
+        }); 
+
+
+
+
+
+
+
+        Schema::create('nilai-dari-direksi-untuk-karyawan', function (Blueprint $table) {
+            $table->integer('id');
+            $table->string('nama', 100);
+            $table->string('nik',100);
+            $table->string('email', 100)->nullable();
+            $table->string('no_hp',100)->nullable();
+            $table->string('bagian',100)->nullable();
+            $table->string('jabatan',100)->nullable();
+
+            $table->float('kompetensi_1')->nullable();
+            $table->string('kompetensi_1_alasan')->nullable();
+
+            $table->float('kompetensi_2')->nullable();
+            $table->string('kompetensi_2_alasan')->nullable();
+
+            $table->float('kompetensi_3')->nullable();
+            $table->string('kompetensi_3_alasan')->nullable();
+
+            $table->float('kompetensi_4')->nullable();
+            $table->string('kompetensi_4_alasan')->nullable();
+
+            $table->float('kompetensi_5')->nullable();
+            $table->string('kompetensi_5_alasan')->nullable();
+
+            $table->float('kompetensi_6')->nullable();
+            $table->string('kompetensi_6_alasan')->nullable();
+
+            $table->float('kompetensi_7')->nullable();
+            $table->string('kompetensi_7_alasan')->nullable();
+
+            $table->float('kompetensi_8')->nullable();
+            $table->string('kompetensi_8_alasan')->nullable();
+
+            $table->float('kompetensi_9')->nullable();
+            $table->string('kompetensi_9_alasan')->nullable();
+
+            $table->float('kompetensi_10')->nullable();
+            $table->string('kompetensi_10_alasan')->nullable();
+
+            $table->float('kompetensi_11')->nullable();
+            $table->string('kompetensi_11_alasan')->nullable();
+
+            $table->float('kompetensi_12')->nullable();
+            $table->string('kompetensi_12_alasan')->nullable();
+
+            $table->float('kompetensi_13')->nullable();
+            $table->string('kompetensi_13_alasan')->nullable();
+
+            $table->float('kompetensi_14')->nullable();
+            $table->string('kompetensi_14_alasan')->nullable();
+
+            $table->float('kompetensi_15')->nullable();
+            $table->string('kompetensi_15_alasan')->nullable();
+
+            $table->float('kompetensi_16')->nullable();
+            $table->string('kompetensi_16_alasan')->nullable();
+
+            $table->float('kompetensi_17')->nullable();
+            $table->string('kompetensi_17_alasan')->nullable();
+
+            $table->float('kompetensi_18')->nullable();
+            $table->string('kompetensi_18_alasan')->nullable();
+
+            $table->float('jumlah')->nullable();
+            $table->float('rata_rata')->nullable();
+            $table->string('sebutan',100)->nullable();
+            
+            
+
+           
+        }); 
+
+
+        Schema::create('komplain', function (Blueprint $table) {
+            $table->integer('id');
+            $table->string('nama', 100);
+            $table->string('nik',100);
+            $table->string('email', 100)->unique();
+            $table->string('no_hp',100)->nullable();
+            $table->string('bagian',100)->nullable();
+            $table->string('jabatan',100)->nullable();
+
+            $table->string('isi_komplain',10000)->nullable();
+
+            $table->string('tujuan_ketua_tim',100)->nullable();
+
+            $table->string('Tujuan_direksi',100)->nullable();
+
+            
+            
+
+           
+        }); 
+
+
+
+       
     }
 
     /**
@@ -121,7 +480,9 @@ class Users extends Migration
     {
         //
         Schema::drop('users');
-        Schema::drop('nilai-diri-sendiri');
-        Schema::drop('nilai-untuk-orang-lain');
+        Schema::drop('nilai-dari-karyawan-untuk-karyawan');
+        Schema::drop('nilai-dari-ketua-tim-untuk-karyawan');
+        Schema::drop('nilai-dari-direksi-untuk-ketua-tim');
+        Schema::drop('nilai-dari-direksi-untuk-karyawan');
     }
 }

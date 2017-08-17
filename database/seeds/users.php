@@ -13,335 +13,130 @@ class users extends Seeder
     {
         //
         DB::table('users')->insert([
-            'nama' => 'parto',
-            'email' => 'parto@local.com',
+            'nama' => 'Parto',
             'nik' => '12345678910',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
+            'email' => 'parto@local.com',
+            'no_hp' => '08976543212',
             'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
+            'jabatan' => 'Officer',
             'password' => encrypt('parto'),
             'img_url' => 'users.png',
         ]);
 
         DB::table('users')->insert([
-            'nama' => 'adit',
-            'email' => 'adit@local.com',
+            'nama' => 'Adit',
             'nik' => '12345678911',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
+            'email' => 'adit@local.com',
+            'no_hp' => '089765132452',
             'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
+            'jabatan' => 'Officer',
             'password' => encrypt('adit'),
             'img_url' => 'users.png',
         ]);
 
         DB::table('users')->insert([
-            'nama' => 'bapak',
-            'email' => 'bapak@local.com',
+            'nama' => 'Ciripa',
             'nik' => '12345678912',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
-            'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
-            'password' => encrypt('bapak'),
-            'img_url' => 'users.png',
-        ]);
-
-        DB::table('users')->insert([
-            'nama' => 'ciripa',
             'email' => 'ciripa@local.com',
-            'nik' => '12345678913',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
+            'no_hp' => '0897242323431',
             'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
+            'jabatan' => 'Officer',
             'password' => encrypt('ciripa'),
             'img_url' => 'users.png',
         ]);
 
         DB::table('users')->insert([
-            'nama' => 'pras',
-            'email' => 'pras@local.com',
-            'nik' => '12345678914',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
+            'nama' => 'Ade',
+            'nik' => '12345678913',
+            'email' => 'ade@local.com',
+            'no_hp' => '08976543212',
             'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
+            'jabatan' => 'Pimpinan',
+            'password' => encrypt('ade'),
+            'img_url' => 'users.png',
+        ]);
+
+        DB::table('users')->insert([
+            'nama' => 'Obenk',
+            'nik' => '12345678914',
+            'email' => 'obenk@local.com',
+            'no_hp' => '081412434321',
+            'bagian' => 'sales',
+            'jabatan' => 'officer',
+            'password' => encrypt('obenk'),
+            'img_url' => 'users.png',
+        ]);
+
+        DB::table('users')->insert([
+            'nama' => 'Pras',
+            'nik' => '12345678915',
+            'email' => 'pras@local.com',
+            'no_hp' => '01313124113131',
+            'bagian' => 'sales',
+            'jabatan' => 'officer',
             'password' => encrypt('pras'),
             'img_url' => 'users.png',
         ]);
 
         DB::table('users')->insert([
-            'nama' => 'elvis',
-            'email' => 'elvis@local.com',
-            'nik' => '12345678915',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
-            'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
-            'password' => encrypt('elvis'),
-            'img_url' => 'users.png',
-        ]);
-
-        DB::table('users')->insert([
-            'nama' => 'handoko',
-            'email' => 'handoko@local.com',
+            'nama' => 'Ampas',
             'nik' => '12345678916',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
-            'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
-            'password' => encrypt('handoko'),
+            'email' => 'ampas@local.com',
+            'no_hp' => '0897131231321',
+            'bagian' => 'sales',
+            'jabatan' => 'officer',
+            'password' => encrypt('ampas'),
             'img_url' => 'users.png',
         ]);
 
         DB::table('users')->insert([
-            'nama' => 'suratno',
-            'email' => 'suratno@local.com',
+            'nama' => 'Dino',
             'nik' => '12345678917',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
-            'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
-            'password' => encrypt('suratno'),
-            'img_url' => 'users.png',
-        ]);
-
-        DB::table('users')->insert([
-            'nama' => 'dery',
-            'email' => 'dery@local.com',
-            'nik' => '12345678918',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
-            'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
-            'password' => encrypt('dery'),
-            'img_url' => 'users.png',
-        ]);
-
-        DB::table('users')->insert([
-            'nama' => 'bintang',
-            'email' => 'bintang@local.com',
-            'nik' => '12345678919',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
-            'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
-            'password' => encrypt('bintang'),
-            'img_url' => 'users.png',
-        ]);
-
-        DB::table('users')->insert([
-            'nama' => 'dino',
             'email' => 'dino@local.com',
-            'nik' => '12345678920',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
-            'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
+            'no_hp' => '0891132123232232',
+            'bagian' => 'sales',
+            'jabatan' => 'Pimpinan',
             'password' => encrypt('dino'),
             'img_url' => 'users.png',
         ]);
 
-    
-    
-        //======================================================================//
+        DB::table('users')->insert([
+            'nama' => 'Mencret',
+            'nik' => '12345678918',
+            'email' => 'mencret@local.com',
+            'no_hp' => '0897654213123',
+            'bagian' => 'Analis Keuangan',
+            'jabatan' => 'officer',
+            'password' => encrypt('mencret'),
+            'img_url' => 'users.png',
+        ]);
 
+        DB::table('users')->insert([
+            'nama' => 'rendy',
+            'nik' => '12345678919',
+            'email' => 'rendy@local.com',
+            'no_hp' => '08973123455653',
+            'bagian' => 'Analis Keuangan',
+            'jabatan' => 'officer',
+            'password' => encrypt('rendy'),
+            'img_url' => 'users.png',
+        ]);
+
+        DB::table('users')->insert([
+            'nama' => 'sasha',
+            'nik' => '12345678920',
+            'email' => 'sasha@local.com',
+            'no_hp' => '089731635323',
+            'bagian' => 'Analis Keuangan',
+            'jabatan' => 'Pimpinan',
+            'password' => encrypt('sasha'),
+            'img_url' => 'users.png',
+        ]);
 
         
-        DB::table('nilai-diri-sendiri')->insert([
-            'nama' => 'parto',
-            'email' => 'parto@local.com',
-            'nik' => '12345678910',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
-            'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
-        ]);
 
-        DB::table('nilai-diri-sendiri')->insert([
-            'nama' => 'adit',
-            'email' => 'adit@local.com',
-            'nik' => '12345678911',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
-            'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
-        ]);
-
-        DB::table('nilai-diri-sendiri')->insert([
-            'nama' => 'bapak',
-            'email' => 'bapak@local.com',
-            'nik' => '12345678912',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
-            'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
-        ]);
-
-        DB::table('nilai-diri-sendiri')->insert([
-            'nama' => 'ciripa',
-            'email' => 'ciripa@local.com',
-            'nik' => '12345678913',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
-            'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
-        ]);
-
-        DB::table('nilai-diri-sendiri')->insert([
-            'nama' => 'pras',
-            'email' => 'pras@local.com',
-            'nik' => '12345678914',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
-            'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
-        ]);
-
-        DB::table('nilai-diri-sendiri')->insert([
-            'nama' => 'elvis',
-            'email' => 'elvis@local.com',
-            'nik' => '12345678915',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
-            'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
-        ]);
-
-        DB::table('nilai-diri-sendiri')->insert([
-            'nama' => 'handoko',
-            'email' => 'handoko@local.com',
-            'nik' => '12345678916',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
-            'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
-        ]);
-
-        DB::table('nilai-diri-sendiri')->insert([
-            'nama' => 'suratno',
-            'email' => 'suratno@local.com',
-            'nik' => '12345678917',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
-            'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
-        ]);
-
-        DB::table('nilai-diri-sendiri')->insert([
-            'nama' => 'dery',
-            'email' => 'dery@local.com',
-            'nik' => '12345678918',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
-            'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
-        ]);
-
-        DB::table('nilai-diri-sendiri')->insert([
-            'nama' => 'bintang',
-            'email' => 'bintang@local.com',
-            'nik' => '12345678919',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
-            'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
-        ]);
-
-        DB::table('nilai-diri-sendiri')->insert([
-            'nama' => 'dino',
-            'email' => 'dino@local.com',
-            'nik' => '12345678920',
-            'pangkat_golongan_ruang' => 'pelaksana,3B',
-            'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Supervisor',
-        ]);
-
-
-
-//============================================================================================//
-
-
-DB::table('nilai-untuk-orang-lain')->insert([
-    'nama' => 'parto',
-    'email' => 'parto@local.com',
-    'nik' => '12345678910',
-    'pangkat_golongan_ruang' => 'pelaksana,3B',
-    'bagian' => 'Teknologi Informasi',
-    'jabatan' => 'Supervisor',
-]);
-
-DB::table('nilai-untuk-orang-lain')->insert([
-    'nama' => 'adit',
-    'email' => 'adit@local.com',
-    'nik' => '12345678911',
-    'pangkat_golongan_ruang' => 'pelaksana,3B',
-    'bagian' => 'Teknologi Informasi',
-    'jabatan' => 'Supervisor',
-]);
-
-DB::table('nilai-untuk-orang-lain')->insert([
-    'nama' => 'bapak',
-    'email' => 'bapak@local.com',
-    'nik' => '12345678912',
-    'pangkat_golongan_ruang' => 'pelaksana,3B',
-    'bagian' => 'Teknologi Informasi',
-    'jabatan' => 'Supervisor',
-]);
-
-DB::table('nilai-untuk-orang-lain')->insert([
-    'nama' => 'ciripa',
-    'email' => 'ciripa@local.com',
-    'nik' => '12345678913',
-    'pangkat_golongan_ruang' => 'pelaksana,3B',
-    'bagian' => 'Teknologi Informasi',
-    'jabatan' => 'Supervisor',
-]);
-
-DB::table('nilai-untuk-orang-lain')->insert([
-    'nama' => 'pras',
-    'email' => 'pras@local.com',
-    'nik' => '12345678914',
-    'pangkat_golongan_ruang' => 'pelaksana,3B',
-    'bagian' => 'Teknologi Informasi',
-    'jabatan' => 'Supervisor',
-]);
-
-DB::table('nilai-untuk-orang-lain')->insert([
-    'nama' => 'elvis',
-    'email' => 'elvis@local.com',
-    'nik' => '12345678915',
-    'pangkat_golongan_ruang' => 'Jendral,10A',
-    'bagian' => 'Teknologi Informasi',
-    'jabatan' => 'Direksi',
-]);
-
-DB::table('nilai-untuk-orang-lain')->insert([
-    'nama' => 'handoko',
-    'email' => 'handoko@local.com',
-    'nik' => '12345678916',
-    'pangkat_golongan_ruang' => 'Jendral,10B',
-    'bagian' => 'Teknologi Informasi',
-    'jabatan' => 'Direksi',
-]);
-
-DB::table('nilai-untuk-orang-lain')->insert([
-    'nama' => 'suratno',
-    'email' => 'suratno@local.com',
-    'nik' => '12345678917',
-    'pangkat_golongan_ruang' => 'Inspektur,8A',
-    'bagian' => 'Teknologi Informasi',
-    'jabatan' => 'Pimpinan',
-]);
-
-DB::table('nilai-untuk-orang-lain')->insert([
-    'nama' => 'dery',
-    'email' => 'dery@local.com',
-    'nik' => '12345678918',
-    'pangkat_golongan_ruang' => 'Inspektur,8c',
-    'bagian' => 'Teknologi Informasi',
-    'jabatan' => 'Pimpinan',
-]);
-
-DB::table('nilai-untuk-orang-lain')->insert([
-    'nama' => 'bintang',
-    'email' => 'bintang@local.com',
-    'nik' => '12345678919',
-    'pangkat_golongan_ruang' => 'pelaksana,3B',
-    'bagian' => 'Teknologi Informasi',
-    'jabatan' => 'Supervisor',
-]);
-
-DB::table('nilai-untuk-orang-lain')->insert([
-    'nama' => 'dino',
-    'email' => 'dino@local.com',
-    'nik' => '12345678920',
-    'pangkat_golongan_ruang' => 'pelaksana,3B',
-    'bagian' => 'Teknologi Informasi',
-    'jabatan' => 'Supervisor',
-]);
-
-
+    
+    
+        
     }
 }

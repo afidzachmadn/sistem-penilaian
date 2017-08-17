@@ -62,7 +62,7 @@
         <nav class="navbar navbar-default navbar-static-top m-b-0">
             <div class="navbar-header">
                 <!-- Toggle icon for mobile view --><a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
-                <div class="top-left-part"><a class="logo" href="/dashboard"><b><img src="{{env('APP_URL')}}/plugins/images/eliteadmin-logo.png" alt="home" /></b><span class="hidden-xs"><strong>Perform</strong>systems</span></a></div>
+                <div class="top-left-part"><a class="logo" href="/dashboard"><b><img src="{{env('APP_URL')}}/plugins/images/header-gambar.png" alt="home" /></b><span class="hidden-xs"><strong>DBA</strong>systems</span></a></div>
                 <!-- /Logo -->
                 <!-- Search input and Toggle icon -->
                 <ul class="nav navbar-top-links navbar-right hidden-xs">

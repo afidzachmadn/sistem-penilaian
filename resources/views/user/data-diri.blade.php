@@ -9,6 +9,12 @@
                             <li> <a href="/nilai-rekan-kerja">Rekan Kerja</a> </li>
                         </ul>
                     </li>
+                    <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa  fa-bolt p-r-10"></i> <span class="hide-menu waves-effect active">Lihat Hasil Penilaian<span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class="waves-effect"> <a href="#">Diri Sendiri</a> </li>
+                            <li> <a href="#">Rekan Kerja</a> </li>
+                        </ul>
+                    </li>
                     <li> <a href="{{env('APP_URL')}}/komplain-nilai" class="waves-effect"><i class="fa fa-warning p-r-10"></i> <span class="hide-menu">Komplain Nilai</span></a> </li>
                     <li> <a href="{{env('APP_URL')}}/tips-penggunaan" class="waves-effect"><i class="fa fa-question-circle p-r-10"></i> <span class="hide-menu">Tips Penggunaan</span></a> </li>
 @endsection
@@ -66,8 +72,8 @@
                                 <hr>
                                 <!-- .row -->
                                 <div class="row text-center m-t-10">
-                                    <div class="col-md-12"><strong>Pangkat Golongan Ruang</strong>
-                                        <p>{{$data_diri->pangkat_golongan_ruang}}</p>
+                                    <div class="col-md-12"><strong>No HP</strong>
+                                        <p>{{$data_diri->no_hp}}</p>
                                     </div>
                                 </div>
                                 <!-- /.row -->
@@ -133,10 +139,10 @@
                                         </div>
                                         
                                         <div class="form-group">
-                                            <label class="col-md-12" for="example-text">Pagkat Golongan Ruang</span>
+                                            <label class="col-md-12" for="example-text">No HP</span>
                                             </label>
                                             <div class="col-md-12">
-                                                <input type="text" id="example-text" name="pangkat_golongan_ruang" class="form-control" placeholder="enter your name" value="{{$data_diri->pangkat_golongan_ruang}}"> </div>
+                                                <input type="text" id="example-text" name="no_hp" class="form-control" placeholder="enter your name" value="{{$data_diri->no_hp}}"> </div>
                                         </div>
 
                                         <div class="form-group">

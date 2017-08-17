@@ -9,6 +9,12 @@
                             <li class="wavers-effect active"> <a href="/nilai-rekan-kerja">Rekan Kerja</a> </li>
                         </ul>
                     </li>
+                    <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa  fa-bolt p-r-10"></i> <span class="hide-menu waves-effect active">Lihat Hasil Penilaian<span class="fa arrow"></span></span></a>
+                        <ul class="nav nav-second-level">
+                            <li class="waves-effect"> <a href="#">Diri Sendiri</a> </li>
+                            <li> <a href="#">Rekan Kerja</a> </li>
+                        </ul>
+                    </li>
                     <li> <a href="{{env('APP_URL')}}/komplain-nilai" class="waves-effect"><i class="fa fa-warning p-r-10"></i> <span class="hide-menu">Komplain Nilai</span></a> </li>
                     <li> <a href="{{env('APP_URL')}}/tips-penggunaan" class="waves-effect"><i class="fa fa-question-circle p-r-10"></i> <span class="hide-menu">Tips Penggunaan</span></a> </li>
 @endsection
