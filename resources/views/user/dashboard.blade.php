@@ -26,13 +26,9 @@
 @section ('header-dashboard-user')
 <div class="row">
                     <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-wrapper p-b-10 collapse in">
-                                <div id="owl-demo" class="owl-carousel owl-theme">
-                                    <div class="item"><img src="../plugins/images/heading-bg/slide3.jpg" alt="Owl Image"></div>
-                                </div>
-                            </div>
-                        </div>
+                        
+                        <img src="{{env('APP_URL')}}/images/office.jpeg" class="img-responsive">
+                              
                     </div>
                 </div>
 @endsection

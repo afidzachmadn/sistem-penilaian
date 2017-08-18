@@ -58,41 +58,41 @@
                                           <div class="form-group">
                                                 <label class="control-label col-md-3">Nama</label>
                                                 <div class="col-md-9">
-                                                    <input type="text" class="form-control" name="nama" value="{{$lihat_user -> nama}}"> <span class="help-block">nama</span>
+                                                    <input type="text" class="form-control" name="nama" value="{{$lihat_user -> nama}}" readonly="readonly">
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">NIK</label>
                                                 <div class="col-md-9">
-                                                    <input type="text" class="form-control" name="nik" value="{{$lihat_user -> nik}}"> <span class="help-block">nik </span> </div>
+                                                    <input type="text" class="form-control" name="nik" value="{{$lihat_user -> nik}}" readonly="readonly">
+                                                </div>
                                             </div>
                                             
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">E-mail</label>
                                                 <div class="col-md-9">
-                                                    <input type="text" class="form-control" name="email" value="{{$lihat_user -> email}}">
-                                                    <span class="help-block">e-mail </span> </div>
+                                                    <input type="text" class="form-control" name="email" value="{{$lihat_user -> email}}" readonly="readonly">
+                                                </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">No HP</label>
                                                 <div class="col-md-9">
-                                                    <input type="text" class="form-control" name="no_hp" value="{{$lihat_user -> no_hp}}">
-                                                    <span class="help-block"> masukan nomor handphone </span> </div>
+                                                    <input type="text" class="form-control" name="no_hp" value="{{$lihat_user -> no_hp}}" readonly="readonly">
+                                                </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">Bagian</label>
                                                 <div class="col-md-9">
-                                                    <input type="text" class="form-control" name="bagian" value="{{$lihat_user -> bagian}}">
-                                                    <span class="help-block">Bagian </span> </div>
+                                                    <input type="text" class="form-control" name="bagian" value="{{$lihat_user -> bagian}}" readonly="readonly">
+                                                </div>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">Jabatan</label>
                                                 <div class="col-md-9">
-                                                    <input type="text" class="form-control" name="jabatan" value="{{$lihat_user -> jabatan}}">
-                                                    <span class="help-block">Jabatan </span> 
+                                                    <input type="text" class="form-control" name="jabatan" value="{{$lihat_user -> jabatan}}" readonly="readonly">
                                                 </div>
                                             </div>
 
