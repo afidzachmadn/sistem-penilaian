@@ -3,16 +3,20 @@
 @section ('sidebar-dashboard-user')
 <li class="nav-small-cap m-t-10">--- Pilihan Menu</li>
                     <li> <a href="{{env('APP_URL')}}/dashboard" class="waves-effect"><i class="fa fa-tachometer p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
-                    <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa fa-star p-r-10"></i> <span class="hide-menu waves-effect active">Penilaian<span class="fa arrow"></span></span></a>
-                        <ul class="nav nav-second-level">
-                            <li class="waves-effect active"> <a href="/nilai-diri-sendiri">Diri Sendiri</a> </li>
-                            <li> <a href="/nilai-rekan-kerja">Rekan Kerja</a> </li>
+                    <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa fa-star p-r-10"></i> <span class="hide-menu waves-effect">Penilaian<span class="fa arrow"></span></span></a>
+                         <ul class="nav nav-second-level">
+                            <li class="waves-effect"> <a href="/nilai-diri-sendiri">Penilaian untuk Diri Sendiri</a> </li>
+                            <li> <a href="/nilai-rekan-kerja">Penilaian untuk Rekan Kerja</a> </li>
+                            <li> <a href="#">Penilaian untuk Ketua Tim</a> </li>
+                            <li> <a href="#">Penilaian untuk Pimpinan</a> </li>
                         </ul>
                     </li>
-                    <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa  fa-bolt p-r-10"></i> <span class="hide-menu waves-effect active">Lihat Hasil Penilaian<span class="fa arrow"></span></span></a>
+                   <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa  fa-bolt p-r-10"></i> <span class="hide-menu waves-effect active">Lihat Hasil Penilaian<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li class="waves-effect"> <a href="#">Diri Sendiri</a> </li>
-                            <li> <a href="#">Rekan Kerja</a> </li>
+                            <li class="waves-effect"> <a href="#">Dari Diri Sendiri</a> </li>
+                            <li> <a href="#">Dari Rekan Kerja</a> </li>
+                            <li class="waves-effect"> <a href="#">Dari Ketua Tim</a> </li>
+                            <li class="waves-effect"> <a href="#">Dari Pimpinan</a> </li>
                         </ul>
                     </li>
                     <li> <a href="{{env('APP_URL')}}/komplain-nilai" class="waves-effect"><i class="fa fa-warning p-r-10"></i> <span class="hide-menu">Komplain Nilai</span></a> </li>

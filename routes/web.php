@@ -24,13 +24,24 @@ Route::get('/logout', "AuthController@logout");
 
 Route::get('/dashboard', 'HomeController@dashboard');
 
+
 Route::get('/nilai-diri-sendiri', 'HomeController@nilai_diri_sendiri');
 
 Route::post('/nilai-diri-sendiri-proses', 'HomeController@nilai_diri_sendiri_proses');
+Route::get('/riwayat-penilaian-diri-sendiri', 'HomeController@riwayat_penilaian_diri_sendiri');
+
+
 
 Route::get('/nilai-rekan-kerja', 'HomeController@nilai_rekan_kerja');
-
 Route::post('/nilai-rekan-kerja-proses', 'HomeController@nilai_rekan_kerja_proses');
+
+
+Route::get('/nilai-ketua-tim', 'HomeController@nilai_ketua_tim');
+Route::post('/nilai-ketua-tim-proses', 'HomeController@nilai_ketua_tim_proses');
+
+Route::get('/nilai-pimpinan', 'HomeController@nilai_pimpinan');
+Route::post('/nilai-pimpinan-proses', 'HomeController@nilai_pimpinan_proses');
+
 
 Route::get('/komplain-nilai', 'HomeController@komplain_nilai');
 

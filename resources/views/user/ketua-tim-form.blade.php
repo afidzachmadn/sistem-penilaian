@@ -2,16 +2,16 @@
 
 @section ('sidebar-dashboard-user')
 <li class="nav-small-cap m-t-10">--- Pilihan Menu</li>
-                    <li> <a href="{{env('APP_URL')}}/dashboard" class="waves-effect active"><i class="fa fa-tachometer p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
-                    <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa fa-star p-r-10"></i> <span class="hide-menu waves-effect">Penilaian<span class="fa arrow"></span></span></a>
+                    <li> <a href="{{env('APP_URL')}}/dashboard" class="waves-effect"><i class="fa fa-tachometer p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
+                     <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa fa-star p-r-10"></i> <span class="hide-menu waves-effect">Penilaian<span class="fa arrow"></span></span></a>
                          <ul class="nav nav-second-level">
                             <li class="waves-effect"> <a href="/nilai-diri-sendiri">Penilaian untuk Diri Sendiri</a> </li>
-                            <li> <a href="/nilai-rekan-kerja">Penilaian untuk Rekan Kerja</a> </li>
-                            <li> <a href="#">Penilaian untuk Ketua Tim</a> </li>
-                            <li> <a href="#">Penilaian untuk Pimpinan</a> </li>
+                            <li class="waves-effect"> <a href="/nilai-rekan-kerja">Penilaian untuk Rekan Kerja</a> </li>
+                            <li class="waves-effect active"> <a href="/nilai-ketua-tim">Penilaian untuk Ketua Tim</a> </li>
+                            <li> <a href="/nilai-pimpinan">Penilaian untuk Pimpinan</a> </li>
                         </ul>
                     </li>
-                    <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa  fa-bolt p-r-10"></i> <span class="hide-menu waves-effect active">Lihat Hasil Penilaian<span class="fa arrow"></span></span></a>
+                    <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa  fa-bolt p-r-10"></i> <span class="hide-menu waves-effect">Lihat Hasil Penilaian<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
                             <li class="waves-effect"> <a href="#">Dari Diri Sendiri</a> </li>
                             <li> <a href="#">Dari Rekan Kerja</a> </li>
@@ -23,19 +23,7 @@
                     <li> <a href="{{env('APP_URL')}}/tips-penggunaan" class="waves-effect"><i class="fa fa-question-circle p-r-10"></i> <span class="hide-menu">Tips Penggunaan</span></a> </li>
 @endsection
 
-@section ('header-dashboard-user')
-<div class="row">
-                    <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-wrapper p-b-10 collapse in">
-                                <div id="owl-demo" class="owl-carousel owl-theme">
-                                    <div class="item"><img src="../plugins/images/heading-bg/slide3.jpg" alt="Owl Image"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-@endsection
+
                 
 @section ('breadcrumb-dashboard-user')
  <div class="row bg-title">
@@ -47,7 +35,8 @@
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
                         <ol class="breadcrumb">
                             <li><a href="#">System</a></li>
-                            <li class="active">Dashboard</li>
+                            <li><a href="/dashboard">Dashboard</a></li>
+                            <li class="active">Penilaian Untuk Ketua Tim</li>
                         </ol>
                     </div>
                     <!-- /.breadcrumb -->
@@ -56,9 +45,8 @@
 
 @section("isi-dashboard-user")
  <!-- .row -->
-               
-                    
-                    
-                
+
+
+
 
 @endsection
