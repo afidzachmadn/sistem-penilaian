@@ -13,10 +13,10 @@
                     </li>
                     <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa  fa-bolt p-r-10"></i> <span class="hide-menu waves-effect active">Lihat Hasil Penilaian<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li class="waves-effect"> <a href="#">Dari Diri Sendiri</a> </li>
-                            <li> <a href="#">Dari Rekan Kerja</a> </li>
-                            <li class="waves-effect"> <a href="#">Dari Ketua Tim</a> </li>
-                            <li class="waves-effect"> <a href="#">Dari Pimpinan</a> </li>
+                            <li class="waves-effect"> <a href="/report-nilai-diri-sendiri">Dari Diri Sendiri</a> </li>
+                            <li> <a href="/report-nilai-dari-rekan-kerja">Dari Rekan Kerja</a> </li>
+                            <li class="waves-effect"> <a href="/report-nilai-dari-ketua-tim">Dari Ketua Tim</a> </li>
+                            <li class="waves-effect"> <a href="/report-nilai-dari-pimpinan">Dari Pimpinan</a> </li>
                         </ul>
                     </li>
                     <li> <a href="{{env('APP_URL')}}/komplain-nilai" class="waves-effect"><i class="fa fa-warning p-r-10"></i> <span class="hide-menu">Komplain Nilai</span></a> </li>
@@ -462,7 +462,7 @@
                         </div>
                     </div>
                  
-<a href="/riwayat-penilaian-diri-sendiri"><button class="sm-12 btn btn-warning">Riwayat penilaian diri sendiri </button></a>
+<a href="/riwayat-penilaian-untuk-karyawan"><button class="sm-12 btn btn-warning">Riwayat penilaian untuk karyawan </button></a>
 </div>
 
 

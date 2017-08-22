@@ -95,6 +95,8 @@ class Users extends Migration
             $table->float('rata_rata')->nullable();
             $table->string('sebutan',100)->nullable();
 
+            $table->datetime('tanggal_penilaian')->nullable();
+
            
         });
         
@@ -164,7 +166,13 @@ class Users extends Migration
             $table->float('jumlah')->nullable();
             $table->float('rata_rata')->nullable();
             $table->string('sebutan',100)->nullable();
-            $table->string('nama_karyawan_yang_dinilai',100)->nullable();
+
+            $table->string('nama_yang_dinilai',100)->nullable();
+            $table->string('nik_yang_dinilai',100)->nullable();
+            $table->string('bagian_yang_dinilai',100)->nullable();
+            $table->string('jabatan_yang_dinilai',100)->nullable();
+
+            $table->datetime('tanggal_penilaian')->nullable();
 
            
         }); 
@@ -211,7 +219,13 @@ class Users extends Migration
             $table->float('jumlah')->nullable();
             $table->float('rata_rata')->nullable();
             $table->string('sebutan',100)->nullable();
-            $table->string('nama_ketua_tim_yang_dinilai',100)->nullable();
+            
+            $table->string('nama_yang_dinilai',100)->nullable();
+            $table->string('nik_yang_dinilai',100)->nullable();
+            $table->string('bagian_yang_dinilai',100)->nullable();
+            $table->string('jabatan_yang_dinilai',100)->nullable();
+
+            $table->datetime('tanggal_penilaian')->nullable();
 
            
         }); 
@@ -260,7 +274,13 @@ class Users extends Migration
             $table->float('jumlah')->nullable();
             $table->float('rata_rata')->nullable();
             $table->string('sebutan',100)->nullable();
-            $table->string('nama_direksi_yang_dinilai',100)->nullable();
+            
+            $table->string('nama_yang_dinilai',100)->nullable();
+            $table->string('nik_yang_dinilai',100)->nullable();
+            $table->string('bagian_yang_dinilai',100)->nullable();
+            $table->string('jabatan_yang_dinilai',100)->nullable();
+
+            $table->datetime('tanggal_penilaian')->nullable();
 
            
         }); 
@@ -268,6 +288,57 @@ class Users extends Migration
 
 
 
+
+        Schema::create('nilai-dari-ketua-tim-untuk-ketua-tim', function (Blueprint $table) {
+            $table->integer('id');
+            $table->string('nama', 100);
+            $table->string('nik',100);
+            $table->string('email', 100)->nullable();
+            $table->string('no_hp',100)->nullable();
+            $table->string('bagian',100)->nullable();
+            $table->string('jabatan',100)->nullable();
+
+            $table->float('kompetensi_4')->nullable();
+            $table->string('kompetensi_4_alasan')->nullable();
+
+
+            $table->float('kompetensi_6')->nullable();
+            $table->string('kompetensi_6_alasan')->nullable();
+
+            $table->float('kompetensi_7')->nullable();
+            $table->string('kompetensi_7_alasan')->nullable();
+
+            $table->float('kompetensi_8')->nullable();
+            $table->string('kompetensi_8_alasan')->nullable();
+
+
+            $table->float('kompetensi_10')->nullable();
+            $table->string('kompetensi_10_alasan')->nullable();
+
+            $table->float('kompetensi_11')->nullable();
+            $table->string('kompetensi_11_alasan')->nullable();
+            
+
+            $table->float('kompetensi_13')->nullable();
+            $table->string('kompetensi_13_alasan')->nullable();            
+
+            $table->float('kompetensi_17')->nullable();
+            $table->string('kompetensi_17_alasan')->nullable();
+
+
+            $table->float('jumlah')->nullable();
+            $table->float('rata_rata')->nullable();
+            $table->string('sebutan',100)->nullable();
+            
+            $table->string('nama_yang_dinilai',100)->nullable();
+            $table->string('nik_yang_dinilai',100)->nullable();
+            $table->string('bagian_yang_dinilai',100)->nullable();
+            $table->string('jabatan_yang_dinilai',100)->nullable();
+
+            $table->datetime('tanggal_penilaian')->nullable();
+
+           
+        }); 
 
 
 
@@ -337,7 +408,13 @@ class Users extends Migration
             $table->float('jumlah')->nullable();
             $table->float('rata_rata')->nullable();
             $table->string('sebutan',100)->nullable();
-            $table->string('nama_karyawan_yang_dinilai',100)->nullable();
+            
+            $table->string('nama_yang_dinilai',100)->nullable();
+            $table->string('nik_yang_dinilai',100)->nullable();
+            $table->string('bagian_yang_dinilai',100)->nullable();
+            $table->string('jabatan_yang_dinilai',100)->nullable();
+
+            $table->datetime('tanggal_penilaian')->nullable();
             
             
 
@@ -387,11 +464,70 @@ class Users extends Migration
             $table->float('jumlah')->nullable();
             $table->float('rata_rata')->nullable();
             $table->string('sebutan',100)->nullable();
-            $table->string('nama_direksi_yang_dinilai',100)->nullable();
+            
+            $table->string('nama_yang_dinilai',100)->nullable();
+            $table->string('nik_yang_dinilai',100)->nullable();
+            $table->string('bagian_yang_dinilai',100)->nullable();
+            $table->string('jabatan_yang_dinilai',100)->nullable();
+
+            $table->datetime('tanggal_penilaian')->nullable();
 
            
         }); 
 
+
+
+
+        Schema::create('nilai-dari-direksi-untuk-direksi', function (Blueprint $table) {
+            $table->integer('id');
+            $table->string('nama', 100);
+            $table->string('nik',100);
+            $table->string('email', 100)->nullable();
+            $table->string('no_hp',100)->nullable();
+            $table->string('bagian',100)->nullable();
+            $table->string('jabatan',100)->nullable();
+
+            $table->float('kompetensi_4')->nullable();
+            $table->string('kompetensi_4_alasan')->nullable();
+
+
+            $table->float('kompetensi_6')->nullable();
+            $table->string('kompetensi_6_alasan')->nullable();
+
+            $table->float('kompetensi_7')->nullable();
+            $table->string('kompetensi_7_alasan')->nullable();
+
+            $table->float('kompetensi_8')->nullable();
+            $table->string('kompetensi_8_alasan')->nullable();
+
+
+            $table->float('kompetensi_10')->nullable();
+            $table->string('kompetensi_10_alasan')->nullable();
+
+            $table->float('kompetensi_11')->nullable();
+            $table->string('kompetensi_11_alasan')->nullable();
+            
+
+            $table->float('kompetensi_13')->nullable();
+            $table->string('kompetensi_13_alasan')->nullable();            
+
+            $table->float('kompetensi_17')->nullable();
+            $table->string('kompetensi_17_alasan')->nullable();
+
+
+            $table->float('jumlah')->nullable();
+            $table->float('rata_rata')->nullable();
+            $table->string('sebutan',100)->nullable();
+            
+            $table->string('nama_yang_dinilai',100)->nullable();
+            $table->string('nik_yang_dinilai',100)->nullable();
+            $table->string('bagian_yang_dinilai',100)->nullable();
+            $table->string('jabatan_yang_dinilai',100)->nullable();
+
+            $table->datetime('tanggal_penilaian')->nullable();
+
+           
+        }); 
 
 
         Schema::create('nilai-dari-direksi-untuk-ketua-tim', function (Blueprint $table) {
@@ -460,7 +596,13 @@ class Users extends Migration
             $table->float('jumlah')->nullable();
             $table->float('rata_rata')->nullable();
             $table->string('sebutan',100)->nullable();
-            $table->string('nama_ketua_tim_yang_dinilai',100)->nullable();
+           
+            $table->string('nama_yang_dinilai',100)->nullable();
+            $table->string('nik_yang_dinilai',100)->nullable();
+            $table->string('bagian_yang_dinilai',100)->nullable();
+            $table->string('jabatan_yang_dinilai',100)->nullable();
+
+            $table->datetime('tanggal_penilaian')->nullable();
             
             
 
@@ -539,7 +681,13 @@ class Users extends Migration
             $table->float('jumlah')->nullable();
             $table->float('rata_rata')->nullable();
             $table->string('sebutan',100)->nullable();
-            $table->string('nama_karyawan_yang_dinilai',100)->nullable();
+            
+            $table->string('nama_yang_dinilai',100)->nullable();
+            $table->string('nik_yang_dinilai',100)->nullable();
+            $table->string('bagian_yang_dinilai',100)->nullable();
+            $table->string('jabatan_yang_dinilai',100)->nullable();
+
+            $table->datetime('tanggal_penilaian')->nullable();
             
             
 

@@ -51,7 +51,7 @@ class users extends Seeder
             'email' => 'ade@local.com',
             'no_hp' => '08976543212',
             'bagian' => 'Teknologi Informasi',
-            'jabatan' => 'Pimpinan',
+            'jabatan' => 'Ketua Tim',
             'password' => encrypt('ade'),
             'img_url' => 'users.png',
         ]);
@@ -95,7 +95,7 @@ class users extends Seeder
             'email' => 'dino@local.com',
             'no_hp' => '0891132123232232',
             'bagian' => 'sales',
-            'jabatan' => 'Pimpinan',
+            'jabatan' => 'Ketua Tim',
             'password' => encrypt('dino'),
             'img_url' => 'users.png',
         ]);
@@ -128,10 +128,44 @@ class users extends Seeder
             'email' => 'sasha@local.com',
             'no_hp' => '089731635323',
             'bagian' => 'Analis Keuangan',
-            'jabatan' => 'Pimpinan',
+            'jabatan' => 'Ketua Tim',
             'password' => encrypt('sasha'),
             'img_url' => 'users.png',
         ]);
+
+        DB::table('users')->insert([
+            'nama' => 'robert',
+            'nik' => '12345678921',
+            'email' => 'robert@local.com',
+            'no_hp' => '0243242345',
+            'bagian' => 'Analis Keuangan',
+            'jabatan' => 'Direksi',
+            'password' => encrypt('robert'),
+            'img_url' => 'users.png',
+        ]);
+
+        DB::table('users')->insert([
+            'nama' => 'david',
+            'nik' => '12345678922',
+            'email' => 'david@local.com',
+            'no_hp' => '0243213123',
+            'bagian' => 'Penyelidik Keuangan',
+            'jabatan' => 'Direksi',
+            'password' => encrypt('david'),
+            'img_url' => 'users.png',
+        ]);
+
+        DB::table('users')->insert([
+            'nama' => 'chaniago',
+            'nik' => '12345678923',
+            'email' => 'chaniago@local.com',
+            'no_hp' => '02431242332',
+            'bagian' => 'Analis Kreditur',
+            'jabatan' => 'Direksi',
+            'password' => encrypt('chaniago'),
+            'img_url' => 'users.png',
+        ]);
+
 
         
 

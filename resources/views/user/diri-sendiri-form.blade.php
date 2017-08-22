@@ -7,16 +7,16 @@
                         <ul class="nav nav-second-level">
                             <li class="waves-effect active"> <a href="/nilai-diri-sendiri">Penilaian untuk Diri Sendiri</a> </li>
                             <li> <a href="/nilai-rekan-kerja">Penilaian untuk Rekan Kerja</a> </li>
-                            <li> <a href="#">Penilaian untuk Ketua Tim</a> </li>
-                            <li> <a href="#">Penilaian untuk Pimpinan</a> </li>
+                            <li> <a href="/nilai-ketua-tim">Penilaian untuk Ketua Tim</a> </li>
+                            <li> <a href="/nilai-pimpinan">Penilaian untuk Pimpinan</a> </li>
                         </ul>
                     </li>
                      <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa  fa-bolt p-r-10"></i> <span class="hide-menu waves-effect active">Lihat Hasil Penilaian<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li class="waves-effect"> <a href="#">Diri Sendiri</a> </li>
-                            <li> <a href="#">Rekan Kerja</a> </li>
-                            <li class="waves-effect"> <a href="#">Ketua Tim</a> </li>
-                            <li class="waves-effect"> <a href="#">Pimpinan</a> </li>
+                            <li class="waves-effect"> <a href="/report-nilai-diri-sendiri">Diri Sendiri</a> </li>
+                            <li> <a href="/report-nilai-dari-rekan-kerja">Rekan Kerja</a> </li>
+                            <li class="waves-effect"> <a href="/report-nilai-dari-ketua-tim">Ketua Tim</a> </li>
+                            <li class="waves-effect"> <a href="/report-nilai-dari-pimpinan">Pimpinan</a> </li>
                         </ul>
                     </li>
                     <li> <a href="{{env('APP_URL')}}/komplain-nilai" class="waves-effect"><i class="fa fa-warning p-r-10"></i> <span class="hide-menu">Komplain Nilai</span></a> </li>

@@ -29,28 +29,87 @@ class AuthController extends Controller
         $usersTable = DB::table('users');
         //cek username dan pass di database
         $usercheck= $usersTable->where('email', $email)->first();
+        $get_jabatan = $usercheck -> jabatan;
         //dd($usercheck);
-        if($usercheck != null){
+        //dd($get_jabatan);
+
+
+        if($get_jabatan == 'Officer' || $get_jabatan == 'officer'){
+            if($usercheck != null){
 
         
-            $decrypt = decrypt($usercheck->password);
+                $decrypt = decrypt($usercheck->password);
             
-            if($password == $decrypt) {
-                $request->session()->put('login', true);
-               // $request->session()->put('role', 'user');
-                $request->session()->put('name', $usercheck->nama);
-                $request->session()->put('id', $usercheck->id);
-                $request->session()->put('img_url', $usercheck->img_url);
+                if($password == $decrypt) {
+                    $request->session()->put('login', true);
+                    //$request->session()->put('role', 'karyawan');
+                    $request->session()->put('name', $usercheck->nama);
+                    $request->session()->put('id', $usercheck->id);
+                    $request->session()->put('img_url', $usercheck->img_url);
                 
-                return redirect()->action('HomeController@dashboard');
-                
-            } 
-            else {
-            return redirect()->action('AuthController@login');
+                    return redirect()->action('HomeController@dashboard');
+                }
+
+                else {
+                    return redirect()->action('AuthController@login');
+                }
             }
-    }
+            
+            else{
+                return redirect()->action('AuthController@login');
+            }
+        }
+
+        elseif($get_jabatan == 'ketua tim' || $get_jabatan == 'Ketua Tim'){
+
+            if($usercheck != null){
+                
+                        
+                                $decrypt = decrypt($usercheck->password);
+                            
+                                if($password == $decrypt) {
+                                    $request->session()->put('login', true);
+                                    //$request->session()->put('role', 'karyawan');
+                                    $request->session()->put('name', $usercheck->nama);
+                                    $request->session()->put('id', $usercheck->id);
+                                    $request->session()->put('img_url', $usercheck->img_url);
+                                
+                                    return redirect()->action('HomeController_2@dashboard');
+                                }
+                
+                                else {
+                                    return redirect()->action('AuthController@login');
+                                }
+                            }
+                            
+                            else{
+                                return redirect()->action('AuthController@login');
+                            }
+        }
+
+        elseif($get_jabatan == 'direksi'){
+            
+            return redirect()->action('AuthController@login');
+        }
+
         else{
             return redirect()->action('AuthController@login');
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
