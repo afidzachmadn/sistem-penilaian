@@ -62,7 +62,7 @@
         <nav class="navbar navbar-default navbar-static-top m-b-0">
             <div class="navbar-header">
                 <!-- Toggle icon for mobile view --><a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="ti-menu"></i></a>
-                <div class="top-left-part"><a class="logo" href="{{env('APP_URL')}}/dashboard"><b><img src="{{env('APP_URL')}}/plugins/images/header-gambar.png" alt="home" /></b>&nbsp<span class="hidden-xs"><strong>DBA</strong>systems</span></a></div>
+                <div class="top-left-part"><a class="logo" href="{{env('APP_URL')}}/ketua-tim/dashboard"><b><img src="{{env('APP_URL')}}/plugins/images/header-gambar.png" alt="home" /></b>&nbsp<span class="hidden-xs"><strong>DBA</strong>systems</span></a></div>
                 <!-- /Logo -->
                 <!-- Search input and Toggle icon -->
                 <ul class="nav navbar-top-links navbar-right hidden-xs">
@@ -96,13 +96,13 @@
                         <a href="#" class="waves-effect"><img src="{{env('APP_URL')}}/storage/foto/{{Session::get('img_url')}}" alt="user-img" class="img-circle"> <span class="hide-menu">{{Session::get('name')}}<span class="fa arrow"></span></span>
                         </a>
                         <ul class="nav nav-second-level">
-                            <li><a href="/data-diri"><i class="fa fa-user"></i>Data Diri</a></li>
+                            <li><a href="{{env('APP_URL')}}/ketua-tim/data-diri"><i class="fa fa-user"></i>Data Diri</a></li>
                             <li><a href="{{env('APP_URL')}}/logout"><i class="fa fa-power-off"></i> Logout</a></li>
                         </ul>
                     </li>
                     <!-- yield sidebar -->
 
-                    @yield('sidebar-dashboard-user')
+                    @yield('sidebar-dashboard-ketua-tim')
                     <!--
                     
                     @yield('sidebar-iso-user')
@@ -117,7 +117,7 @@
         <div id="page-wrapper">
             <div class="container-fluid">
                 <!-- letakan yield -->
-                @yield('breadcrumb-dashboard-user')
+                @yield('breadcrumb-dashboard-ketua-tim')
                 <!--
                 
                 @yield('breadcrumb-iso-user')
@@ -133,14 +133,14 @@
                 
 
                 <!-- contents start here -->
-                    @yield('header-dashboard-user')
+                    @yield('header-dashboard-ketua-tim')
                     <!-- FOR THIS SECTION IS ONLY FOR DASHBOARD! -->
                 
 
 
                 <!-- .row -->
                 <div class="row">
-                     @yield('isi-dashboard-user')
+                     @yield('isi-dashboard-ketua-tim')
                     <!--
                     
                      @yield('isi-iso-user')

@@ -65,4 +65,14 @@ Route::post('/edit-data-diri-proses', 'HomeController@edit_data_diri_proses');
 
 
 
-Route::get('/dashboard-ketua-tim', 'HomeController_2@dashboard');
+Route::get('/ketua-tim/dashboard', 'HomeController_2@dashboard');
+
+Route::get('/ketua-tim/data-diri', 'HomeController_2@data_diri');
+
+Route::post('/ketua-tim/edit-data-diri-proses', 'HomeController_2@edit_data_diri_proses');
+
+
+Route::get('/ketua-tim/nilai-diri-sendiri', 'HomeController_2@nilai_diri_sendiri');
+Route::post('/ketua-tim/nilai-diri-sendiri-proses', 'HomeController_2@nilai_diri_sendiri_proses');
+Route::get('/ketua-tim/riwayat-penilaian-diri-sendiri', 'HomeController_2@riwayat_penilaian_diri_sendiri');
+

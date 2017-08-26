@@ -45,10 +45,10 @@ class HomeController extends Controller
         $LihatUser = DB::table('users');
         $LihatUserNext = $LihatUser->where('id', $id)->first();
 
-        $LihatNilai= DB::table('nilai-dari-karyawan-untuk-karyawan');
+        
 
         if($request->session()->get('login') && $CekRole == 'officer' || $request->session()->get('login') && $CekRole == 'Officer') {
-            return view('user.diri-sendiri-form',array('lihat_user' => $LihatUserNext, 'lihat_nilai' => $LihatNilai));
+            return view('user.diri-sendiri-form',array('lihat_user' => $LihatUserNext));
         } else {
             return view('auth.login');
 

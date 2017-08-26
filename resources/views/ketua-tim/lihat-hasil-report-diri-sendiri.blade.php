@@ -2,10 +2,10 @@
 
 @section ('sidebar-dashboard-ketua-tim')
 <li class="nav-small-cap m-t-10">--- Pilihan Menu</li>
-                    <li> <a href="{{env('APP_URL')}}/ketua-tim/dashboard" class="waves-effect active"><i class="fa fa-tachometer p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
+                    <li> <a href="{{env('APP_URL')}}/ketua-tim/dashboard" class="waves-effect"><i class="fa fa-tachometer p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
                     <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa fa-star p-r-10"></i> <span class="hide-menu waves-effect">Penilaian<span class="fa arrow"></span></span></a>
                          <ul class="nav nav-second-level">
-                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-diri-sendiri">Penilaian untuk Diri Sendiri</a> </li>
+                            <li class="waves-effect active"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-diri-sendiri">Penilaian untuk Diri Sendiri</a> </li>
                             <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/rekan-kerja">Penilaian untuk Rekan Kerja</a> </li>
                             <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/karyawan">Penilaian untuk Karyawan</a> </li>
                             <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/pimpinan">Penilaian untuk Pimpinan</a> </li>
@@ -23,15 +23,7 @@
                     <li> <a href="#" class="waves-effect"><i class="fa fa-question-circle p-r-10"></i> <span class="hide-menu">Tips Penggunaan</span></a> </li>
 @endsection
 
-@section ('header-dashboard-ketua-tim')
-<div class="row">
-                    <div class="col-lg-12">
-                        
-                        <img src="{{env('APP_URL')}}/images/office.png" class="img-responsive">
-                              
-                    </div>
-                </div>
-@endsection
+
                 
 @section ('breadcrumb-dashboard-ketua-tim')
  <div class="row bg-title">
@@ -43,7 +35,7 @@
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
                         <ol class="breadcrumb">
                             <li><a href="#">System</a></li>
-                            <li class="active">Dashboard</li>
+                            <li class="active">Lihat Hasil Report Diri Sendiri</li>
                         </ol>
                     </div>
                     <!-- /.breadcrumb -->
@@ -51,10 +43,6 @@
 @endsection
 
 @section("isi-dashboard-ketua-tim")
- <!-- .row -->
-               
-                    
-                    
-                
+ 
 
 @endsection

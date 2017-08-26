@@ -84,11 +84,7 @@
                         </div>
                     </div>
                 </form>
-                <div class="col-xs-12">
-                            <a href="{{env('APP_URL')}}/login-admin">
-                            <div class="btn btn-success btn-lg btn-block text-uppercase waves-effect waves-light" type="submit">Login Khusus Staff</div>
-                            </a>
-                </div>
+                
             </div>
         </div>
     </section>
