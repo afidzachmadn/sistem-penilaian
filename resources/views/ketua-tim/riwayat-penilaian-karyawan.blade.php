@@ -5,9 +5,9 @@
                     <li> <a href="{{env('APP_URL')}}/ketua-tim/dashboard" class="waves-effect"><i class="fa fa-tachometer p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
                     <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa fa-star p-r-10"></i> <span class="hide-menu waves-effect active">Penilaian<span class="fa arrow"></span></span></a>
                          <ul class="nav nav-second-level">
-                            <li class="waves-effect active"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-diri-sendiri">Penilaian untuk Diri Sendiri</a> </li>
+                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-diri-sendiri">Penilaian untuk Diri Sendiri</a> </li>
                             <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-rekan-kerja">Penilaian untuk Rekan Kerja</a> </li>
-                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-karyawan">Penilaian untuk Karyawan</a> </li>
+                            <li class="waves-effect active"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-karyawan">Penilaian untuk Karyawan</a> </li>
                             <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-pimpinan">Penilaian untuk Pimpinan</a> </li>
                         </ul>
                     </li>
@@ -35,7 +35,7 @@
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
                         <ol class="breadcrumb">
                             <li><a href="#">System</a></li>
-                            <li class="active">Riwayat Penilaian Diri Sendiri</li>
+                            <li class="active">Riwayat Penilaian Untuk Karyawan</li>
                         </ol>
                     </div>
                     <!-- /.breadcrumb -->
@@ -46,10 +46,11 @@
 
 
 @section("isi-dashboard-ketua-tim")
- <div class="col-sm-12">
+<div class="col-sm-12">
                         <div class="white-box">
-                            <h3 class="box-title">Riwayat penilaian untuk diri sendiri</h3>
-                            <p class="text-muted">Untuk mengubah/mengedit silahkan untuk mengisi kembali form penilaian diri sendiri yang berada di menu Form Penilaian
+                            <h3 class="box-title">Riwayat Penilaian untuk Karyawan</h3>
+                            <p class="text-muted">Untuk mengubah/mengedit silahkan untuk mengisi kembali form penilaian untuk rekan kerja yang berada di menu Form Penilaian.</br>
+                            <b>*catatan : hasil nilai sebelum edit akan tetap tampil dan nilai yang valid adalah nilai yang terbaru</b>
                             </p>
                             
                             </br>
@@ -57,108 +58,160 @@
                                 <table id="myTable" class="table table-striped">
                                     <thead>
                                         <tr>
-                                            <th>Nama</th>
+                                            <th>Nama Karyawan yang Dinilai</th>
                                             <th>NIK</th>
+                                            <th>Bagian</th>
+                                            <th>Jabatan</th>
                                             
+                                            
+                                            <th>Nilai Kompetensi 1</th>
+                                            <th>Alasan</th>
+                                            <th>Nilai Kompetensi 2</th>
+                                            <th>Alasan</th>
+                                            <th>Nilai Kompetensi 3</th>
+                                            <th>Alasan</th>
                                             <th>Nilai Kompetensi 4</th>
                                             <th>Alasan</th>
-                                            
+                                            <th>Nilai Kompetensi 5</th>
+                                            <th>Alasan</th>
                                             <th>Nilai Kompetensi 6</th>
                                             <th>Alasan</th>
                                             <th>Nilai Kompetensi 7</th>
                                             <th>Alasan</th>
                                             <th>Nilai Kompetensi 8</th>
                                             <th>Alasan</th>
-                                           
+                                            <th>Nilai Kompetensi 9</th>
+                                            <th>Alasan</th>
                                             <th>Nilai Kompetensi 10</th>
                                             <th>Alasan</th>
                                             <th>Nilai Kompetensi 11</th>
                                             <th>Alasan</th>
-                                            
+                                            <th>Nilai Kompetensi 12</th>
+                                            <th>Alasan</th>
                                             <th>Nilai Kompetensi 13</th>
                                             <th>Alasan</th>
-                                            
+                                            <th>Nilai Kompetensi 14</th>
+                                            <th>Alasan</th>
+                                            <th>Nilai Kompetensi 15</th>
+                                            <th>Alasan</th>
+                                            <th>Nilai Kompetensi 16</th>
+                                            <th>Alasan</th>
                                             <th>Nilai Kompetensi 17</th>
                                             <th>Alasan</th>
-                                            
+                                            <th>Nilai Kompetensi 18</th>
+                                            <th>Alasan</th>
+
                                             <th>Total Nilai</th>
                                             <th>Rata-rata Nilai</th>
                                             <th>Sebutan</th>
                                             <th>Tanggal Penilaian</th>
+                                            
                                     
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       
+                                       @foreach($lihat_riwayat as $riwayat)
                                             <tr>
-                                                <td>{{$lihat_riwayat->nama}}</td>
-                                                <td>{{$lihat_riwayat->nik}}</td>
-                                               
-                                                <td>{{$lihat_riwayat->kompetensi_4}}</td>
-                                                <td>{{$lihat_riwayat->kompetensi_4_alasan}}</td>
-                                                
-                                                <td>{{$lihat_riwayat->kompetensi_6}}</td>
-                                                <td>{{$lihat_riwayat->kompetensi_6_alasan}}</td>
-                                                <td>{{$lihat_riwayat->kompetensi_7}}</td>
-                                                <td>{{$lihat_riwayat->kompetensi_7_alasan}}</td>
-                                                <td>{{$lihat_riwayat->kompetensi_8}}</td>
-                                                <td>{{$lihat_riwayat->kompetensi_8_alasan}}</td>
-                                                
-                                                <td>{{$lihat_riwayat->kompetensi_10}}</td>
-                                                <td>{{$lihat_riwayat->kompetensi_10_alasan}}</td>
-                                                <td>{{$lihat_riwayat->kompetensi_11}}</td>
-                                                <td>{{$lihat_riwayat->kompetensi_11_alasan}}</td>
-                                                
-                                                <td>{{$lihat_riwayat->kompetensi_13}}</td>
-                                                <td>{{$lihat_riwayat->kompetensi_13_alasan}}</td>
-                                                
-                                                <td>{{$lihat_riwayat->kompetensi_17}}</td>
-                                                <td>{{$lihat_riwayat->kompetensi_17_alasan}}</td>
-                                              
-                                                <td>{{$lihat_riwayat->jumlah}}</td>
-                                                <td>{{$lihat_riwayat->rata_rata}}</td>
-                                                <td>{{$lihat_riwayat->sebutan}}</td>
-                                                <td>{{$lihat_riwayat->tanggal_penilaian}}
+                                                <td>{{$riwayat->nama_yang_dinilai}}</td>
+                                                <td>{{$riwayat->nik_yang_dinilai}}</td>
+                                                <td>{{$riwayat->bagian_yang_dinilai}}</td>
+                                                <td>{{$riwayat->jabatan_yang_dinilai}}</td>
 
-
+                                                <td>{{$riwayat->kompetensi_1}}</td>
+                                                <td>{{$riwayat->kompetensi_1_alasan}}</td>
+                                                <td>{{$riwayat->kompetensi_2}}</td>
+                                                <td>{{$riwayat->kompetensi_2_alasan}}</td>
+                                                <td>{{$riwayat->kompetensi_3}}</td>
+                                                <td>{{$riwayat->kompetensi_3_alasan}}</td>
+                                                <td>{{$riwayat->kompetensi_4}}</td>
+                                                <td>{{$riwayat->kompetensi_4_alasan}}</td>
+                                                <td>{{$riwayat->kompetensi_5}}</td>
+                                                <td>{{$riwayat->kompetensi_5_alasan}}</td>
+                                                <td>{{$riwayat->kompetensi_6}}</td>
+                                                <td>{{$riwayat->kompetensi_6_alasan}}</td>
+                                                <td>{{$riwayat->kompetensi_7}}</td>
+                                                <td>{{$riwayat->kompetensi_7_alasan}}</td>
+                                                <td>{{$riwayat->kompetensi_8}}</td>
+                                                <td>{{$riwayat->kompetensi_8_alasan}}</td>
+                                                <td>{{$riwayat->kompetensi_9}}</td>
+                                                <td>{{$riwayat->kompetensi_9_alasan}}</td>
+                                                <td>{{$riwayat->kompetensi_10}}</td>
+                                                <td>{{$riwayat->kompetensi_10_alasan}}</td>
+                                                <td>{{$riwayat->kompetensi_11}}</td>
+                                                <td>{{$riwayat->kompetensi_11_alasan}}</td>
+                                                <td>{{$riwayat->kompetensi_12}}</td>
+                                                <td>{{$riwayat->kompetensi_12_alasan}}</td>
+                                                <td>{{$riwayat->kompetensi_13}}</td>
+                                                <td>{{$riwayat->kompetensi_13_alasan}}</td>
+                                                <td>{{$riwayat->kompetensi_14}}</td>
+                                                <td>{{$riwayat->kompetensi_14_alasan}}</td>
+                                                <td>{{$riwayat->kompetensi_15}}</td>
+                                                <td>{{$riwayat->kompetensi_15_alasan}}</td>
+                                                <td>{{$riwayat->kompetensi_16}}</td>
+                                                <td>{{$riwayat->kompetensi_16_alasan}}</td>
+                                                <td>{{$riwayat->kompetensi_17}}</td>
+                                                <td>{{$riwayat->kompetensi_17_alasan}}</td>
+                                                <td>{{$riwayat->kompetensi_18}}</td>
+                                                <td>{{$riwayat->kompetensi_18_alasan}}</td>
                                                
-                                                
+                                                <td>{{$riwayat->jumlah}}</td>
+                                                <td>{{$riwayat->rata_rata}}</td>
+                                                <td>{{$riwayat->sebutan}}</td>
+                                                <td>{{$riwayat -> tanggal_penilaian}}</td>
                                             </tr>
+                                        @endforeach
                                         
                                        
                                         
                                     </tbody>
                                     <thead>
                                         <tr>
-                                            <th>Nama</th>
+                                            <th>Nama yang Dinilai</th>
                                             <th>NIK</th>
-                                            
+                                            <th>Bagian</th>
+                                            <th>Jabatan</th>
+                                           <th>Nilai Kompetensi 1</th>
+                                            <th>Alasan</th>
+                                            <th>Nilai Kompetensi 2</th>
+                                            <th>Alasan</th>
+                                            <th>Nilai Kompetensi 3</th>
+                                            <th>Alasan</th>
                                             <th>Nilai Kompetensi 4</th>
                                             <th>Alasan</th>
-                                            
+                                            <th>Nilai Kompetensi 5</th>
+                                            <th>Alasan</th>
                                             <th>Nilai Kompetensi 6</th>
                                             <th>Alasan</th>
                                             <th>Nilai Kompetensi 7</th>
                                             <th>Alasan</th>
                                             <th>Nilai Kompetensi 8</th>
                                             <th>Alasan</th>
-                                           
+                                            <th>Nilai Kompetensi 9</th>
+                                            <th>Alasan</th>
                                             <th>Nilai Kompetensi 10</th>
                                             <th>Alasan</th>
                                             <th>Nilai Kompetensi 11</th>
                                             <th>Alasan</th>
-                                            
+                                            <th>Nilai Kompetensi 12</th>
+                                            <th>Alasan</th>
                                             <th>Nilai Kompetensi 13</th>
                                             <th>Alasan</th>
-                                            
+                                            <th>Nilai Kompetensi 14</th>
+                                            <th>Alasan</th>
+                                            <th>Nilai Kompetensi 15</th>
+                                            <th>Alasan</th>
+                                            <th>Nilai Kompetensi 16</th>
+                                            <th>Alasan</th>
                                             <th>Nilai Kompetensi 17</th>
                                             <th>Alasan</th>
-                                            
+                                            <th>Nilai Kompetensi 18</th>
+                                            <th>Alasan</th>
+
                                             <th>Total Nilai</th>
                                             <th>Rata-rata Nilai</th>
                                             <th>Sebutan</th>
                                             <th>Tanggal Penilaian</th>
-                                    
+                                            
                                         </tr>
                                     </thead>
                                 </table>
@@ -189,7 +242,6 @@
                     </div>
 
 </div>
-                    
                     
                 
 

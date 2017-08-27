@@ -1,31 +1,31 @@
-@extends('layout.master')
+@extends('layout.master-pimpinan')
 
-@section ('sidebar-dashboard-user')
+@section ('sidebar-dashboard-pimpinan')
 <li class="nav-small-cap m-t-10">--- Pilihan Menu</li>
-                     <li> <a href="{{env('APP_URL')}}/dashboard" class="waves-effect"><i class="fa fa-tachometer p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
-                    <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa fa-star p-r-10"></i> <span class="hide-menu waves-effect">Form Penilaian<span class="fa arrow"></span></span></a>
-                        <ul class="nav nav-second-level">
-                            <li class="waves-effect"> <a href="/nilai-diri-sendiri">Penilaian untuk Diri Sendiri</a> </li>
-                            <li> <a href="/nilai-rekan-kerja">Penilaian untuk Rekan Kerja</a> </li>
-                            <li> <a href="/nilai-ketua-tim">Penilaian untuk Ketua Tim</a> </li>
-                            <li> <a href="/nilai-pimpinan">Penilaian untuk Pimpinan</a> </li>
+                    <li> <a href="{{env('APP_URL')}}/pimpinan/dashboard" class="waves-effect"><i class="fa fa-tachometer p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
+                    <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa fa-star p-r-10"></i> <span class="hide-menu waves-effect">Penilaian<span class="fa arrow"></span></span></a>
+                         <ul class="nav nav-second-level">
+                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/pimpinan/nilai-diri-sendiri">Penilaian untuk Diri Sendiri</a> </li>
+                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/pimpinan/nilai-rekan-kerja">Penilaian untuk Rekan Kerja</a> </li>
+                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/pimpinan/nilai-karyawan">Penilaian untuk Karyawan</a> </li>
+                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/pimpinan/nilai-ketua-tim">Penilaian untuk Ketua Tim</a> </li>
                         </ul>
                     </li>
-                     <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa  fa-bolt p-r-10"></i> <span class="hide-menu waves-effect active">Lihat Hasil Penilaian<span class="fa arrow"></span></span></a>
+                    <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa  fa-bolt p-r-10"></i> <span class="hide-menu waves-effect active">Lihat Hasil Penilaian<span class="fa arrow"></span></span></a>
                         <ul class="nav nav-second-level">
-                            <li class="waves-effect active"> <a href="/report-nilai-diri-sendiri">Diri Sendiri</a> </li>
-                            <li> <a href="/report-nilai-dari-rekan-kerja">Rekan Kerja</a> </li>
-                            <li class="waves-effect"> <a href="/report-nilai-dari-ketua-tim">Ketua Tim</a> </li>
-                            <li class="waves-effect"> <a href="/report-nilai-dari-pimpinan">Pimpinan</a> </li>
+                            <li class="waves-effect active"> <a href="{{env('APP_URL')}}/pimpinan/report-nilai-diri-sendiri">Dari Diri Sendiri</a> </li>
+                            <li> <a href="{{env('APP_URL')}}/pimpinan/report-nilai-dari-rekan-kerja">Dari Rekan Kerja</a> </li>
+                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/pimpinan/report-nilai-dari-karyawan">Dari Karyawan</a> </li>
+                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/pimpinan/report-nilai-dari-ketua-tim">Dari Ketua Tim</a> </li>
                         </ul>
                     </li>
-                    <li> <a href="{{env('APP_URL')}}/komplain-nilai" class="waves-effect"><i class="fa fa-warning p-r-10"></i> <span class="hide-menu">Komplain Nilai</span></a> </li>
-                    <li> <a href="{{env('APP_URL')}}/tips-penggunaan" class="waves-effect"><i class="fa fa-question-circle p-r-10"></i> <span class="hide-menu">Tips Penggunaan</span></a> </li>
+                    <li> <a href="#" class="waves-effect"><i class="fa fa-warning p-r-10"></i> <span class="hide-menu">Komplain Nilai</span></a> </li>
+                    <li> <a href="#" class="waves-effect"><i class="fa fa-question-circle p-r-10"></i> <span class="hide-menu">Tips Penggunaan</span></a> </li>
 @endsection
 
 
                 
-@section ('breadcrumb-dashboard-user')
+@section ('breadcrumb-dashboard-pimpinan')
  <div class="row bg-title">
                     <!-- .page title -->
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
@@ -35,18 +35,16 @@
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
                         <ol class="breadcrumb">
                             <li><a href="#">System</a></li>
-                            <li><a href="/dashboard">Dashboard</a></li>
-                            <li class="active">Report Penilaian Diri Sendiri</li>
-
+                            <li class="active">Lihat Hasil Report Diri Sendiri</li>
                         </ol>
                     </div>
                     <!-- /.breadcrumb -->
                 </div>
 @endsection
 
-@section("isi-dashboard-user")
-
-<div class="col-md-12">
+@section("isi-dashboard-pimpinan")
+ 
+ <div class="col-md-12">
     <div class="white-box printableArea">
         <h3><b>Laporan Penilaian Kinerja</b> <span class="pull-right">#diri-sendiri</span></h3>
         <hr>
@@ -83,27 +81,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                               
-                                <td>Kemampuan melaksanakan tugas/kerja tanpa perintah</td>
-                                <td class="text-right">{{$lihat_nilai -> kompetensi_1}} </td>
-                                <td class="text-right">{{$lihat_nilai -> kompetensi_1_alasan}}</td>
-                                
-                            </tr>
-                            <tr>
-                                
-                                <td>Kemampuan menggunakan teknologi/peralatan</td>
-                                <td class="text-right">{{$lihat_nilai -> kompetensi_2}} </td>
-                                <td class="text-right">{{$lihat_nilai -> kompetensi_2_alasan}}</td>
-                                
-                            </tr>
-                            <tr>
-                               
-                                <td>Tanggung jawab dalam melaksanakan tugas</td>
-                                <td class="text-right">{{$lihat_nilai -> kompetensi_3}} </td>
-                                <td class="text-right">{{$lihat_nilai -> kompetensi_3_alasan}}</td>
-                                
-                            </tr>
+                            
                             <tr>
                                 
                                 <td>Kehadiran dan aktifitas selama jam kerja</td>
@@ -111,13 +89,7 @@
                                 <td class="text-right">{{$lihat_nilai -> kompetensi_4_alasan}}</td>
                                 
                             </tr>
-                            <tr>
-                                
-                                <td>Sikap terhadap pekerjaan</td>
-                                <td class="text-right">{{$lihat_nilai -> kompetensi_5}} </td>
-                                <td class="text-right">{{$lihat_nilai -> kompetensi_5_alasan}}</td>
-                                
-                            </tr>
+                            
                             <tr>
                                 
                                 <td>Disiplin dalam mematuhi peraturan perusahaan</td>
@@ -139,13 +111,7 @@
                                 <td class="text-right">{{$lihat_nilai -> kompetensi_8_alasan}}</td>
                                 
                             </tr>
-                            <tr>
-                                
-                                <td>Kemampuan mengatasi stress dan konflik kerja</td>
-                                <td class="text-right">{{$lihat_nilai -> kompetensi_9}} </td>
-                                <td class="text-right">{{$lihat_nilai -> kompetensi_9_alasan}}</td>
-                                
-                            </tr>
+                            
                             <tr>
                                 
                                 <td>Inisiatif dan kreatifitas yang dilaksanakan</td>
@@ -160,13 +126,7 @@
                                 <td class="text-right">{{$lihat_nilai -> kompetensi_11_alasan}}</td>
                                 
                             </tr>
-                            <tr>
-                                
-                                <td>Kemampuan memimpin unit, kelompok/tim-kerja</td>
-                                <td class="text-right">{{$lihat_nilai -> kompetensi_12}} </td>
-                                <td class="text-right">{{$lihat_nilai -> kompetensi_12_alasan}}</td>
-                                
-                            </tr>
+                            
                             <tr>
                                 
                                 <td>Keterampilan menyusun dan melaksanakan perencanaan</td>
@@ -181,32 +141,12 @@
                                 <td class="text-right">{{$lihat_nilai -> kompetensi_14_alasan}}</td>
                                 
                             </tr>
-                            <tr>
-                                
-                                <td>Kemampuan mempertahankan kualitas</td>
-                                <td class="text-right">{{$lihat_nilai -> kompetensi_15}} </td>
-                                <td class="text-right">{{$lihat_nilai -> kompetensi_15_alasan}}</td>
-                                
-                            </tr>
-                            <tr>
-                                
-                                <td>Partisipasi dalam kegiatan organisasi</td>
-                                <td class="text-right">{{$lihat_nilai -> kompetensi_16}} </td>
-                                <td class="text-right">{{$lihat_nilai -> kompetensi_16_alasan}}</td>
-                                
-                            </tr>
+                            
                             <tr>
                                 
                                 <td>Kemampuan memperbaiki kesalahan dalam bekerja</td>
                                 <td class="text-right">{{$lihat_nilai -> kompetensi_17}} </td>
                                 <td class="text-right">{{$lihat_nilai -> kompetensi_17_alasan}}</td>
-                                
-                            </tr>
-                             <tr>
-                                
-                                <td>Kemampuan memperbaiki kesalahan dalam bekerja</td>
-                                <td class="text-right">{{$lihat_nilai -> kompetensi_18}} </td>
-                                <td class="text-right">{{$lihat_nilai -> kompetensi_18_alasan}}</td>
                                 
                             </tr>
                             <tr>
@@ -247,7 +187,5 @@
                     <button id="print" class="btn btn-default btn-outline" type="button"> <span><i class="fa fa-print"></i> Print</span></button>
     </div>
 </div>
-
- 
 
 @endsection

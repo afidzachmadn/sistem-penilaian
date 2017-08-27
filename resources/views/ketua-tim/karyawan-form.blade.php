@@ -5,13 +5,13 @@
                     <li> <a href="{{env('APP_URL')}}/ketua-tim/dashboard" class="waves-effect"><i class="fa fa-tachometer p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
                     <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa fa-star p-r-10"></i> <span class="hide-menu waves-effect active">Penilaian<span class="fa arrow"></span></span></a>
                          <ul class="nav nav-second-level">
-                            <li class="waves-effect active"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-diri-sendiri">Penilaian untuk Diri Sendiri</a> </li>
+                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-diri-sendiri">Penilaian untuk Diri Sendiri</a> </li>
                             <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-rekan-kerja">Penilaian untuk Rekan Kerja</a> </li>
-                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-karyawan">Penilaian untuk Karyawan</a> </li>
+                            <li class="waves-effect active"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-karyawan">Penilaian untuk Karyawan</a> </li>
                             <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-pimpinan">Penilaian untuk Pimpinan</a> </li>
                         </ul>
                     </li>
-                    <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa  fa-bolt p-r-10"></i> <span class="hide-menu waves-effect active">Lihat Hasil Penilaian<span class="fa arrow"></span></span></a>
+                    <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa  fa-bolt p-r-10"></i> <span class="hide-menu waves-effect ">Lihat Hasil Penilaian<span class="fa arrow"></span></span></a>
                          <ul class="nav nav-second-level">
                             <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/report-nilai-diri-sendiri">Dari Diri Sendiri</a> </li>
                             <li> <a href="{{env('APP_URL')}}/ketua-tim/report-nilai-dari-rekan-kerja">Dari Rekan Kerja</a> </li>
@@ -35,7 +35,7 @@
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
                         <ol class="breadcrumb">
                             <li><a href="#">System</a></li>
-                            <li class="active">Penilaian Diri Sendiri</li>
+                            <li class="active">Penilaian Untuk Karyawan</li>
                         </ol>
                     </div>
                     <!-- /.breadcrumb -->
@@ -49,7 +49,7 @@
                             <div class="panel-heading"> Data Diri:</div>
                             <div class="panel-wrapper collapse in" aria-expanded="true">
                                 <div class="panel-body">
-                                    <form action="{{url('/ketua-tim/nilai-diri-sendiri-proses')}}" method="post" class="form-horizontal form-bordered">
+                                    <form action="{{url('/ketua-tim/nilai-karyawan-proses')}}" method="post" class="form-horizontal form-bordered">
                                     {{csrf_field()}}
                                         <div class="form-body">
 
@@ -98,12 +98,77 @@
                                             </br>
                                             <hr>
                                             <hr>
-                                            <div class="panel-heading"> Nilai Kompentensi:</div>
+                                            <div class="panel-heading" style="background-color:#fb78a8; color:white"> Nilai Kompentensi:</div>
                                             </br>
-
+                                            
+                                            <div class="form-group">
+                                                <label class="control-label">Karyawan</label>
+                                                    <select class="form-control" name="pilihan_nama">
+                                                        <option>Nama - NIK - Jabatan</option>
+                                                        @foreach($LihatUserSpesial as $pegawai)
+                                                        <option value="{{$pegawai -> nama}}">{{$pegawai -> nama}} - {{$pegawai -> nik}} - {{$pegawai -> jabatan}}</option>
+                                                        @endforeach
+                                                    </select> <span class="help-block">Karyawan yang anda ingin nilai</span>
+                                            </div>
+                                            
                                             
 
                                             
+
+                                            
+                                        <!-- 1 -->
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Kemampuan melaksanakan tugas/kerja tanpa perintah</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_1" value="" required="">
+                                                    <span class="help-block">masukan nilai (1-5)</span> 
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Alasan penilaian</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_1_alasan" value="">
+                                                    <span class="help-block">alasan penilaian anda (jika ada): </span> 
+                                                </div>
+                                            </div>
+                                            <hr>
+
+                                            <!-- 2 -->
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Ketetapan cara mengerjakan pekerjaan/perintah</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_2" value="" required="">
+                                                    <span class="help-block">masukan nilai (1-5)</span> 
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Alasan penilaian</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_2_alasan" value="">
+                                                    <span class="help-block">alasan penilaian anda (jika ada): </span> 
+                                                </div>
+                                            </div>
+                                            <hr>
+
+                                            <!-- 3 -->
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Kemampuan menggunakan teknologi/peralatan</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_3" value="" required="">
+                                                    <span class="help-block">masukan nilai (1-5)</span> 
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Alasan penilaian</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_3_alasan" value="">
+                                                    <span class="help-block">alasan penilaian anda (jika ada): </span> 
+                                                </div>
+                                            </div>
+                                            <hr>
 
                                             <!-- 4 -->
 
@@ -123,6 +188,24 @@
                                                 </div>
                                             </div>
 
+                                            <hr>
+
+                                            <!-- 5 -->
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Kehadiran dan aktifitas selama jam kerja</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_5" value="" required="">
+                                                    <span class="help-block">masukan nilai (1-5)</span> 
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Alasan penilaian</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_5_alasan" value="">
+                                                    <span class="help-block">alasan penilaian anda (jika ada): </span> 
+                                                </div>
+                                            </div>
                                             <hr>
 
                                             <!-- 6 -->
@@ -182,7 +265,24 @@
 
                                             <hr>
 
-                                            
+                                            <!-- 9 -->
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Kesesuaian keterampilan/keahlian dengan pekerjaan/jabatan</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_9" value="" required="">
+                                                    <span class="help-block">masukan nilai (1-5)</span> 
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Alasan penilaian</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_9_alasan" value="">
+                                                    <span class="help-block">alasan penilaian anda (jika ada): </span> 
+                                                </div>
+                                            </div>
+                                            <hr>
+
                                             <!-- 10 -->
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">Kemampuan mengatasi stress dan konflik kerja</label>
@@ -222,6 +322,24 @@
                                             <hr>
 
 
+                                            <!-- 12 -->
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Pengetahuan tentang pekerjaan dan tugas sekarang</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_12" value="" required="">
+                                                    <span class="help-block">masukan nilai (1-5)</span> 
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Alasan penilaian</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_12_alasan" value="">
+                                                    <span class="help-block">alasan penilaian anda (jika ada): </span> 
+                                                </div>
+                                            </div>
+                                            <hr>
+
                                             <!-- 13 -->
                                             <div class="form-group">
                                                 <label class="control-label col-md-3">Kemampuan memimpin unit, kelompok/tim kerja</label>
@@ -241,6 +359,59 @@
 
                                             <hr>
 
+                                            <!-- 14 -->
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Keterampilan menyusun dan melaksanakan perencanaan</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_14" value="" required="">
+                                                    <span class="help-block">masukan nilai (1-5)</span> 
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Alasan penilaian</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_14_alasan" value="">
+                                                    <span class="help-block">alasan penilaian anda (jika ada): </span> 
+                                                </div>
+                                            </div>
+                                            <hr>
+
+                                            <!-- 15 -->
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Kemampuan membagi/memberikan koordinasi tugas</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_15" value="" required="">
+                                                    <span class="help-block">masukan nilai (1-5)</span> 
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Alasan penilaian</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_15_alasan" value="">
+                                                    <span class="help-block">alasan penilaian anda (jika ada): </span> 
+                                                </div>
+                                            </div>
+                                            <hr>
+
+                                            <!-- 16 -->
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Kemampuan mempertahankan/meningkatkan kualitas</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_16" value="" required="">
+                                                    <span class="help-block">masukan nilai (1-5)</span> 
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Alasan penilaian</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_16_alasan" value="">
+                                                    <span class="help-block">alasan penilaian anda (jika ada): </span> 
+                                                </div>
+                                            </div>
+                                            <hr>
 
                                             <!-- 17 -->
                                             <div class="form-group">
@@ -258,7 +429,25 @@
                                                     <span class="help-block">alasan penilaian anda (jika ada): </span> 
                                                 </div>
                                             </div>
-                                            <div class="form-actions">
+                                            <hr>
+
+                                            <!-- 18 -->
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Kemampuan memperbaiki kesalahan dalam bekerja</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_18" value="" required="">
+                                                    <span class="help-block">masukan nilai (1-5)</span> 
+                                                </div>
+                                                
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Alasan penilaian</label>
+                                                <div class="col-md-9">
+                                                    <input type="text" class="form-control" name="kompetensi_18_alasan" value="">
+                                                    <span class="help-block">alasan penilaian anda (jika ada): </span> 
+                                                </div>
+                                            </div>
+                                        <div class="form-actions">
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="row">
@@ -276,7 +465,7 @@
                         </div>
                     </div>
                  
-<a href="{{env('APP_URL')}}/ketua-tim/riwayat-penilaian-diri-sendiri"><button class="sm-12 btn btn-warning">Riwayat penilaian diri sendiri </button></a>
+<a href="{{env('APP_URL')}}/ketua-tim/riwayat-penilaian-karyawan"><button class="sm-12 btn btn-warning">Riwayat penilaian karyawan </button></a>
 </div>
                
                     

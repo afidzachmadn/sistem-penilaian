@@ -5,13 +5,13 @@
                     <li> <a href="{{env('APP_URL')}}/ketua-tim/dashboard" class="waves-effect"><i class="fa fa-tachometer p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
                     <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa fa-star p-r-10"></i> <span class="hide-menu waves-effect active">Penilaian<span class="fa arrow"></span></span></a>
                          <ul class="nav nav-second-level">
-                            <li class="waves-effect active"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-diri-sendiri">Penilaian untuk Diri Sendiri</a> </li>
-                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-rekan-kerja">Penilaian untuk Rekan Kerja</a> </li>
+                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-diri-sendiri">Penilaian untuk Diri Sendiri</a> </li>
+                            <li class="waves-effect active"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-rekan-kerja">Penilaian untuk Rekan Kerja</a> </li>
                             <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-karyawan">Penilaian untuk Karyawan</a> </li>
                             <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-pimpinan">Penilaian untuk Pimpinan</a> </li>
                         </ul>
                     </li>
-                    <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa  fa-bolt p-r-10"></i> <span class="hide-menu waves-effect active">Lihat Hasil Penilaian<span class="fa arrow"></span></span></a>
+                    <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa  fa-bolt p-r-10"></i> <span class="hide-menu waves-effect ">Lihat Hasil Penilaian<span class="fa arrow"></span></span></a>
                          <ul class="nav nav-second-level">
                             <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/report-nilai-diri-sendiri">Dari Diri Sendiri</a> </li>
                             <li> <a href="{{env('APP_URL')}}/ketua-tim/report-nilai-dari-rekan-kerja">Dari Rekan Kerja</a> </li>
@@ -35,7 +35,7 @@
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12"> 
                         <ol class="breadcrumb">
                             <li><a href="#">System</a></li>
-                            <li class="active">Penilaian Diri Sendiri</li>
+                            <li class="active">Penilaian Untuk Rekan Kerja</li>
                         </ol>
                     </div>
                     <!-- /.breadcrumb -->
@@ -49,7 +49,7 @@
                             <div class="panel-heading"> Data Diri:</div>
                             <div class="panel-wrapper collapse in" aria-expanded="true">
                                 <div class="panel-body">
-                                    <form action="{{url('/ketua-tim/nilai-diri-sendiri-proses')}}" method="post" class="form-horizontal form-bordered">
+                                    <form action="{{url('/ketua-tim/nilai-rekan-kerja-proses')}}" method="post" class="form-horizontal form-bordered">
                                     {{csrf_field()}}
                                         <div class="form-body">
 
@@ -98,8 +98,20 @@
                                             </br>
                                             <hr>
                                             <hr>
-                                            <div class="panel-heading"> Nilai Kompentensi:</div>
+                                            <div class="panel-heading" style="background-color:#fb78a8; color:white"> Nilai Kompentensi:</div>
                                             </br>
+                                            
+                                            <div class="form-group">
+                                                <label class="control-label">Rekan kerja</label>
+                                                    <select class="form-control" name="pilihan_nama">
+                                                        <option>Nama - NIK - Jabatan</option>
+                                                        @foreach($LihatUserSpesial as $pegawai)
+                                                        <option value="{{$pegawai -> nama}}">{{$pegawai -> nama}} - {{$pegawai -> nik}} - {{$pegawai -> jabatan}}</option>
+                                                        @endforeach
+                                                    </select> <span class="help-block">Pilih rekan kerja yang anda ingin nilai</span>
+                                            </div>
+                                            
+                                            
 
                                             
 
@@ -276,7 +288,7 @@
                         </div>
                     </div>
                  
-<a href="{{env('APP_URL')}}/ketua-tim/riwayat-penilaian-diri-sendiri"><button class="sm-12 btn btn-warning">Riwayat penilaian diri sendiri </button></a>
+<a href="{{env('APP_URL')}}/ketua-tim/riwayat-penilaian-rekan-kerja"><button class="sm-12 btn btn-warning">Riwayat penilaian rekan kerja </button></a>
 </div>
                
                     

@@ -87,9 +87,31 @@ class AuthController extends Controller
                             }
         }
 
-        elseif($get_jabatan == 'direksi'){
+        elseif($get_jabatan == 'direksi' || $get_jabatan == 'Direksi'){
             
-            return redirect()->action('AuthController@login');
+            if($usercheck != null){
+                
+                        
+                                $decrypt = decrypt($usercheck->password);
+                            
+                                if($password == $decrypt) {
+                                    $request->session()->put('login', true);
+                                    //$request->session()->put('role', 'karyawan');
+                                    $request->session()->put('name', $usercheck->nama);
+                                    $request->session()->put('id', $usercheck->id);
+                                    $request->session()->put('img_url', $usercheck->img_url);
+                                
+                                    return redirect()->action('HomeController_3@dashboard');
+                                }
+                
+                                else {
+                                    return redirect()->action('AuthController@login');
+                                }
+                            }
+                            
+                            else{
+                                return redirect()->action('AuthController@login');
+                            }
         }
 
         else{

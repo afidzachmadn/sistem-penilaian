@@ -1,29 +1,29 @@
-@extends('layout.master-ketua-tim')
+@extends('layout.master-pimpinan')
 
-@section ('sidebar-dashboard-ketua-tim')
+@section ('sidebar-dashboard-pimpinan')
 <li class="nav-small-cap m-t-10">--- Pilihan Menu</li>
-                    <li> <a href="{{env('APP_URL')}}/ketua-tim/dashboard" class="waves-effect active"><i class="fa fa-tachometer p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
+                    <li> <a href="{{env('APP_URL')}}/pimpinan/dashboard" class="waves-effect active"><i class="fa fa-tachometer p-r-10"></i> <span class="hide-menu">Dashboard</span></a> </li>
                     <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa fa-star p-r-10"></i> <span class="hide-menu waves-effect">Penilaian<span class="fa arrow"></span></span></a>
                          <ul class="nav nav-second-level">
-                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-diri-sendiri">Penilaian untuk Diri Sendiri</a> </li>
-                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-rekan-kerja">Penilaian untuk Rekan Kerja</a> </li>
-                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-karyawan">Penilaian untuk Karyawan</a> </li>
-                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/nilai-pimpinan">Penilaian untuk Pimpinan</a> </li>
+                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/pimpinan/nilai-diri-sendiri">Penilaian untuk Diri Sendiri</a> </li>
+                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/pimpinan/nilai-rekan-kerja">Penilaian untuk Rekan Kerja</a> </li>
+                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/pimpinan/nilai-karyawan">Penilaian untuk Karyawan</a> </li>
+                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/pimpinan/nilai-ketua-tim">Penilaian untuk Ketua Tim</a> </li>
                         </ul>
                     </li>
                     <li> <a href="javascript:void(0)" class="waves-effect"><i class="fa  fa-bolt p-r-10"></i> <span class="hide-menu waves-effect active">Lihat Hasil Penilaian<span class="fa arrow"></span></span></a>
                          <ul class="nav nav-second-level">
-                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/report-nilai-diri-sendiri">Dari Diri Sendiri</a> </li>
-                            <li> <a href="{{env('APP_URL')}}/ketua-tim/report-nilai-dari-rekan-kerja">Dari Rekan Kerja</a> </li>
-                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/report-nilai-dari-karyawan">Dari Karyawan</a> </li>
-                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/ketua-tim/report-nilai-dari-pimpinan">Dari Pimpinan</a> </li>
+                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/pimpinan/report-nilai-diri-sendiri">Dari Diri Sendiri</a> </li>
+                            <li> <a href="{{env('APP_URL')}}/pimpinan/report-nilai-dari-rekan-kerja">Dari Rekan Kerja</a> </li>
+                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/pimpinan/report-nilai-dari-karyawan">Dari Karyawan</a> </li>
+                            <li class="waves-effect"> <a href="{{env('APP_URL')}}/pimpinan/report-nilai-dari-ketua-tim">Dari Ketua Tim</a> </li>
                         </ul>
                     </li>
                     <li> <a href="#" class="waves-effect"><i class="fa fa-warning p-r-10"></i> <span class="hide-menu">Komplain Nilai</span></a> </li>
                     <li> <a href="#" class="waves-effect"><i class="fa fa-question-circle p-r-10"></i> <span class="hide-menu">Tips Penggunaan</span></a> </li>
 @endsection
 
-@section ('header-dashboard-ketua-tim')
+@section ('header-dashboard-pimpinan')
 <div class="row">
                     <div class="col-lg-12">
                         
@@ -33,7 +33,7 @@
                 </div>
 @endsection
                 
-@section ('breadcrumb-dashboard-ketua-tim')
+@section ('breadcrumb-dashboard-pimpinan')
  <div class="row bg-title">
                     <!-- .page title -->
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
@@ -50,7 +50,7 @@
                 </div>
 @endsection
 
-@section("isi-dashboard-ketua-tim")
+@section("isi-dashboard-pimpinan")
  <!-- .row -->
                
                     

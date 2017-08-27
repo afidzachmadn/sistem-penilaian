@@ -204,6 +204,14 @@
                                 <td class="text-right">{{$LihatNilai -> kompetensi_17_alasan}}</td>
                                 
                             </tr>
+
+                            <tr>
+                                
+                                <td>Kemampuan memperbaiki kesalahan dalam bekerja</td>
+                                <td class="text-right">{{$LihatNilai -> kompetensi_18}} </td>
+                                <td class="text-right">{{$LihatNilai -> kompetensi_18_alasan}}</td>
+                                
+                            </tr>
                             <tr>
                                 
                                 <td><b>Jumlah:</b></td>
