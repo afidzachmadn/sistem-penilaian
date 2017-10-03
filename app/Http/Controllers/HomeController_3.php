@@ -702,8 +702,7 @@ class HomeController_3 extends Controller
             $kompetensi_18 = $request->get('kompetensi_18');
             $kompetensi_18_alasan = $request->get('kompetensi_18_alasan');
     
-    
-    
+            
     
             $jumlah= $kompetensi_1+$kompetensi_2+$kompetensi_3+$kompetensi_4+$kompetensi_5+$kompetensi_6+$kompetensi_7+$kompetensi_8+$kompetensi_9+$kompetensi_10+$kompetensi_11+$kompetensi_12+$kompetensi_13+$kompetensi_14+$kompetensi_15+$kompetensi_16+$kompetensi_17+$kompetensi_18;
             $rata_rata = $jumlah/18;

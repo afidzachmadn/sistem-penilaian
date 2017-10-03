@@ -45,7 +45,7 @@ Route::get('/report-nilai-dari-rekan-kerja', 'HomeController@report_nilai_dari_r
 Route::get('/nilai-pimpinan', 'HomeController@nilai_ketua_tim');
 Route::post('/nilai-pimpinan-proses', 'HomeController@nilai_ketua_tim_proses');
 Route::get('/riwayat-penilaian-untuk-pimpinan', 'HomeController@riwayat_penilaian_untuk_ketua_tim');
-Route::get('/report-nilai-dari-pimpinan', 'HomeController@report_nilai_dari_ketua_tim');
+Route::get('/report-nilai-dari-ketua-tim', 'HomeController@report_nilai_dari_ketua_tim');
 
 
 Route::get('/nilai-pimpinan', 'HomeController@nilai_pimpinan');
